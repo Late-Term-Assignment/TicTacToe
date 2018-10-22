@@ -1,6 +1,6 @@
 // ticTacToe.js
-function success() {
-    return true;
+function initBoard(){
+    return board = [null, null, null, null, null, null, null, null, null];
 }
 
-module.exports = success;
+module.exports = initBoard;
