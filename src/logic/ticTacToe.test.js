@@ -1,6 +1,6 @@
 // ticTacToe.test.js
-const success = require('./ticTacToe');
+const initBoard = require('./ticTacToe');
 
-test("should return true", () => {
-    expect(success()).toBe(true);
+test("should return an empty array", () => {
+    expect(initBoard()).toEqual([null, null, null, null, null, null, null, null, null]);
 });
