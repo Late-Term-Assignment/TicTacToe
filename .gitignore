@@ -144,5 +144,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows
