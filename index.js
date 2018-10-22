@@ -1,10 +1,4 @@
 // index.js
-// const success = require('./src/logic/ticTacToe');
-
-// console.log(success());
-
-// module.exports = success;
-
 const app = require("./src/api");
 
 const PORT = process.env.PORT || 3000;
