@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const ticTacToe = require("./logic/ticTacToe");
-const main = new ticTacToe();
+const ticTacToeGame = require("./logic/ticTacToe");
+const game = new ticTacToeGame();
 
 app.get("/ticTacToe", (req, res) => {
-	res.send({"name": main.initBoard()})
+	res.send({"gameBoardStatus": game.initBoard()})
 });
 
 module.exports = app;
