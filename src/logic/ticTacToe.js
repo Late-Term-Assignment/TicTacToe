@@ -5,6 +5,7 @@ class ticTacToe
   constructor(){
       this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       this.playerTurn = "X";
+      this.winStatus = false;
   }
 
   makeMove(move){
@@ -30,15 +31,14 @@ class ticTacToe
   checkWinStatus(){
     for(var i = 0; i < 9; i += 3){
       if(this.board[i] === this.board[i+1] && this.board[i] === this.board[i+2]){
-        return true;
+        this.winStatus = true;
       }
     }
     for(var i = 0; i < 3; i++){
       if(this.board[i] === this.board[i+3] && this.board[i] === this.board[i+6]){
-        return true;
+        this.winStatus = true;
       }
     }
-    return false;
   }
 
   resetBoard(){
