@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/client/index.js',
     output: {
-        filename: 'index.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -15,8 +15,12 @@ module.exports = {
     devServer: {
         port: 3000,
         open: true,
+        compress: true/*
         proxy: {
-            "/api": "http://localhost:8080"
-        }
-    },
+            '/api/**': {
+              target: 'http://localhost:8084',
+              secure: false,
+            }
+        }*/
+    }
 }
