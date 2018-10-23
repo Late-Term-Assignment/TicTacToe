@@ -11,5 +11,11 @@ test("should return the board array with first movebor", () => {
 });
 
 test("should return O aftur X has made move", () => {
-  expect(tester.changePlayerTurn()).toBe("O");
+  tester.changePlayerTurn();
+  expect(tester.playerTurn).toBe("O");
+});
+
+test("should return O ", () => {
+  tester.changePlayerTurn();
+  expect(tester.playerTurn).toBe("X");
 });

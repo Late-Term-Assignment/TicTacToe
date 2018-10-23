@@ -16,8 +16,9 @@ class ticTacToe
   changePlayerTurn(){
     if(this.playerTurn === "X"){
       this.playerTurn = "O";
+    } else{
+      this.playerTurn = "X";
     }
-    return this.playerTurn;
   }
 }
 
