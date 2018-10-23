@@ -33,7 +33,32 @@ class consoleUI {
     }
 
     playersPlay() {
-        
+        console.log(' __________________________________________');
+        console.log('                   SCORE');
+        console.log('      X : ' + game.xWins + '       ' 
+        + 'Draws : ' + game.draws + '     '
+        + 'Y : ' + game.oWins);
+        console.log(' __________________________________________');
+        rl.question("It's your turn player " + game.playerTurn + ", please select what number in the board you want to fill in\n > ",
+        (answer) => {
+            if(answer > 0 && answer < 10) {
+                if(game.validateInput(answer)) {
+                    game.makeMove(answer);
+                    game.checkWinStatus();
+                    if(game.winStatus != 0) {
+                        game.updateScore();
+                        cui.printWinner(game.winStatus);
+
+                    }
+                    cui.printBoard();
+                    cui.playersPlay();
+                }
+            }
+            else {
+                console.log("Illegal number input, insert a number from 1-9 in an Open space.")
+                cui.playersPlay();
+            }
+        });
     }
 
     printWinner(winner) {
