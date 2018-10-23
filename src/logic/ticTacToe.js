@@ -39,7 +39,8 @@ class ticTacToe
         this.winStatus = true;
       }
     }
-    if(this.board[0] === this.board[4] && this.board[0] === this.board[8]){
+    if(this.board[0] === this.board[4] && this.board[0] === this.board[8] || 
+       this.board[2] === this.board[4] && this.board[2] === this.board[6]){
       this.winStatus = true;
     }
   }

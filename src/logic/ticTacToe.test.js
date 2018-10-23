@@ -65,11 +65,11 @@ test("should return true for win check on square 2,5,8 (vertical check)", () => 
   expect(tester.winStatus).toBe(true);
 });
 
-test("should return true for win check on square 1,5,9 (diagonal check)", () => {
+test("should return true for win check on square 3,5,7 (diagonal check)", () => {
   tester.resetBoard();
-  tester.makeMove(1);
+  tester.makeMove(3);
   tester.makeMove(5);
-  tester.makeMove(9);
+  tester.makeMove(7);
   tester.checkWinStatus();
   expect(tester.winStatus).toBe(true);
 });
