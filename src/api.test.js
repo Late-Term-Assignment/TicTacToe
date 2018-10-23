@@ -9,6 +9,6 @@ describe("GET /api/", () => {
 	});
 	it("should return a board initialized with nulls", async () => {
 		const res = await request(api).get("/ticTacToe/");
-		expect(res.body).toEqual({"gameBoardStatus": [null, null, null, null, null, null, null, null, null]})
+		expect(res.body).toEqual({"gameBoardStatus": [1, 2, 3, 4, 5, 6, 7, 8, 9]})
 	});
 });
