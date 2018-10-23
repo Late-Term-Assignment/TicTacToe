@@ -33,6 +33,7 @@ class consoleUI {
     }
 
     playersPlay() {
+        cui.printNewLine();
         cui.printBoard();
         cui.printScore();
         rl.question("It's your turn player " + game.playerTurn + ", please select what number in the board you want to fill in\n > ",
@@ -58,6 +59,7 @@ class consoleUI {
     }
 
     printWinner(winner) {
+        cui.printNewLine();
         cui.printBoard();
         cui.printScore();
         if(winner === 1) {
@@ -120,6 +122,12 @@ class consoleUI {
         + game.board[8] + "   |" );
         console.log("\t\t|_______|_______|_______|");
         
+    }
+
+    printNewLine() {
+        for(var i = 0; i < 50; i++) {
+            console.log('\n')
+        }
     }
 }
 
