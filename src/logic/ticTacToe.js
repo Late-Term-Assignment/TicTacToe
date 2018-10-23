@@ -6,11 +6,12 @@ class ticTacToe
       this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       this.playerTurn = "X";
       this.winStatus = false;
+      this.nrOfmoves = 9;
   }
 
   makeMove(move){
-    console.log("It is X's turn to move: ");
     this.board[move - 1] = this.playerTurn;
+    this.nrOfmoves++;
   }
 
   validateInput(move){
@@ -43,10 +44,16 @@ class ticTacToe
        this.board[2] === this.board[4] && this.board[2] === this.board[6]){
       this.winStatus = true;
     }
+    if(this.nrOfmoves === 9 && !this.winStatus){
+      return true;
+    }
   }
 
   resetBoard(){
     this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    this.playerTurn = "X";
+    this.nrOfmoves = 0;
+    this.winStatus = false;
   }
   
 }
