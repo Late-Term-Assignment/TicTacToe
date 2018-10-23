@@ -12,6 +12,10 @@ class ticTacToe
     this.board[move - 1] = this.playerTurn;
   }
 
+  validateInput(move){
+    return true;
+  }
+
   changePlayerTurn(){
     if(this.playerTurn === "X"){
       this.playerTurn = "O";

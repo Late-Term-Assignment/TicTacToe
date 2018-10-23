@@ -20,3 +20,7 @@ test("should return O ", () => {
   tester.changePlayerTurn();
   expect(tester.playerTurn).toBe("X");
 });
+
+test("should return true", () => {
+  expect(tester.validateInput(4)).toBe(true);
+});
