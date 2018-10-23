@@ -74,6 +74,11 @@ test("should return true for win check on square 3,5,7 (diagonal check)", () => 
   expect(tester.winStatus).toBe(true);
 });
 
+test("should return 1 after x won", () => {
+  tester.updateScore();
+  expect(tester.xWins).toBe(1);
+});
+
 test("should return true from draw", () => {
   tester.resetBoard();
   tester.makeMove(1);

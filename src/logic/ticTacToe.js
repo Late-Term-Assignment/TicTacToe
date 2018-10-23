@@ -7,6 +7,9 @@ class ticTacToe
       this.playerTurn = "X";
       this.winStatus = false;
       this.nrOfmoves = 9;
+      this.xWins = 0;
+      this.oWins = 0;
+      this.draws = 0;
   }
 
   makeMove(move){
@@ -44,8 +47,20 @@ class ticTacToe
        this.board[2] === this.board[4] && this.board[2] === this.board[6]){
       this.winStatus = true;
     }
+    
     if(this.nrOfmoves === 9 && !this.winStatus){
+      this.draws++;
       return true;
+    }
+  }
+
+  updateScore(){
+    if(this.winStatus){
+      if(this.playerTurn === "X"){
+        this.xWins++;
+      } else{
+        this.oWins++;
+      }
     }
   }
 
