@@ -28,3 +28,48 @@ test("should return true for legal move", () => {
 test("should return false for illegal move", () => {
   expect(tester.validateInput(5)).toBe(false);
 });
+
+test("should return false for win check on square 1-3", () => {
+  tester.checkWinStatus();
+  expect(tester.winStatus).toBe(false);
+});
+
+test("should return true for win check on square 1-3", () => {
+  tester.makeMove(1);
+  tester.makeMove(2);
+  tester.makeMove(3);
+  tester.checkWinStatus();
+  expect(tester.winStatus).toBe(true);
+});
+
+test("should return a new board", () => {  
+  tester.resetBoard();
+  expect(tester.board).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+});
+
+test("should return true for win check on square 4-6", () => {
+  tester.resetBoard();
+  tester.makeMove(4);
+  tester.makeMove(5);
+  tester.makeMove(6);
+  tester.checkWinStatus();
+  expect(tester.winStatus).toBe(true);
+});
+
+test("should return true for win check on square 2,5,8 (vertical check)", () => {
+  tester.resetBoard();
+  tester.makeMove(2);
+  tester.makeMove(5);
+  tester.makeMove(8);
+  tester.checkWinStatus();
+  expect(tester.winStatus).toBe(true);
+});
+
+test("should return true for win check on square 3,5,7 (diagonal check)", () => {
+  tester.resetBoard();
+  tester.makeMove(3);
+  tester.makeMove(5);
+  tester.makeMove(7);
+  tester.checkWinStatus();
+  expect(tester.winStatus).toBe(true);
+});
