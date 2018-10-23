@@ -29,6 +29,13 @@ test("should return false for illegal move", () => {
   expect(tester.validateInput(5)).toBe(false);
 });
 
-test("should return true", () => {
+test("should return false for win check on square 1-3", () => {
+  expect(tester.checkWinStatus()).toBe(false);
+});
+
+test("should return true for win check on square 1-3", () => {
+  tester.makeMove(1);
+  tester.makeMove(2);
+  tester.makeMove(3);
   expect(tester.checkWinStatus()).toBe(true);
 });
