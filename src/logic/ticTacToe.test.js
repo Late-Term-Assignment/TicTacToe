@@ -39,3 +39,8 @@ test("should return true for win check on square 1-3", () => {
   tester.makeMove(3);
   expect(tester.checkWinStatus()).toBe(true);
 });
+
+test("should return a new board", () => {  
+  tester.resetBoard();
+  expect(tester.board).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+});
