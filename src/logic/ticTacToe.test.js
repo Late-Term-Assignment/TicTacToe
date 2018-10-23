@@ -28,3 +28,7 @@ test("should return true for legal move", () => {
 test("should return false for illegal move", () => {
   expect(tester.validateInput(5)).toBe(false);
 });
+
+test("should return true", () => {
+  expect(tester.checkWinStatus()).toBe(true);
+});

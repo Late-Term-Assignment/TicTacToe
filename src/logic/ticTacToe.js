@@ -26,6 +26,10 @@ class ticTacToe
       this.playerTurn = "X";
     }
   }
+
+  checkWinStatus(){
+    return true;
+  }
 }
 
 
