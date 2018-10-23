@@ -10,18 +10,16 @@ const rl = readline.createInterface({
 
 class consoleUI {
     constructor() {
-        this.startGame = false;
+        this.isOver = false;
     }
 
     beginGame() {
         console.log("Welcome to Tic-Tak-Toe! ");
         console.log("The rules are simple, if you are not familiar with them, google them.");
-        rl.question('If you want to begin the game, types (b)egin! If you want to quit type (q)uit.\t',
+        rl.question('If you want to begin the game, types (b)egin! If you want to quit type (q)uit.\n> ',
         (answer) => {
             if(answer == 'b') {
-                rl.close();
-                this.startGame = true; 
-                cui.printBoard();
+                cui.playersPlay();
            }
            else if(answer == 'q') {
                rl.close();
@@ -32,7 +30,19 @@ class consoleUI {
                cui.beginGame();
            } 
         });
-    };
+    }
+
+    playersPlay() {
+        
+    }
+
+    printWinner(winner) {
+       
+    }
+
+    printGameOver() {
+
+    }
 
     printBoard() {
         console.log(" _______________________");
@@ -60,5 +70,4 @@ class consoleUI {
 
 const cui = new consoleUI();
 cui.beginGame();
-//cui.printBoard();
 module.exports = consoleUI;
