@@ -28,10 +28,12 @@ class ticTacToe
   }
 
   checkWinStatus(){
-      if(this.board[0] === this.board[1] && this.board[0] === this.board[2]){
+    for(var i = 0; i < 9; i += 3){
+      if(this.board[i] === this.board[i+1] && this.board[i] === this.board[i+2]){
         return true;
       }
-      return false;
+    }
+    return false;
   }
 
   resetBoard(){
