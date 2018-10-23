@@ -6,7 +6,7 @@ const game = new ticTacToe();
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-});
+  });
 
 class consoleUI {
     constructor() {
@@ -14,18 +14,25 @@ class consoleUI {
     }
 
     beginGame() {
-        //while(!this.startGame) {
-            console.log("Welcome to Tic-Tak-Toe! ");
-            console.log("The rules are simple, if you are not familiar with them, google them.");
-            rl.question('If you want to begin the game, types (b)egin! If you want to quit type (q)uit.',
-            (answer) => {
-                if(answer == 'b') {
-                    console.log("got it");
-                    return this.startGame = true; 
-                };
-            });
-       // }
-    }
+        console.log("Welcome to Tic-Tak-Toe! ");
+        console.log("The rules are simple, if you are not familiar with them, google them.");
+        rl.question('If you want to begin the game, types (b)egin! If you want to quit type (q)uit.\t',
+        (answer) => {
+            if(answer == 'b') {
+                rl.close();
+                this.startGame = true; 
+                cui.printBoard();
+           }
+           else if(answer == 'q') {
+               rl.close();
+               console.log("Thank you, come again!");
+           }
+           else {
+               console.log("No legal input, try again!"); 
+               cui.beginGame();
+           } 
+        });
+    };
 
     printBoard() {
         console.log(" _______________________");
@@ -52,3 +59,5 @@ class consoleUI {
 }
 
 const cui = new consoleUI();
+cui.beginGame();
+//cui.printBoard();
