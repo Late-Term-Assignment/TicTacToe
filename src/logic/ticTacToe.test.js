@@ -21,6 +21,10 @@ test("should return O ", () => {
   expect(tester.playerTurn).toBe("X");
 });
 
-test("should return true", () => {
+test("should return true for legal move", () => {
   expect(tester.validateInput(4)).toBe(true);
+});
+
+test("should return false for illegal move", () => {
+  expect(tester.validateInput(5)).toBe(false);
 });
