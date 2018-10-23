@@ -91,5 +91,6 @@ test("should return true from draw", () => {
   tester.makeMove(5);
   tester.makeMove(7);
   tester.makeMove(9);
-  expect(tester.checkWinStatus()).toBe(true);
+  tester.checkWinStatus()
+  expect(tester.draws).toBe(1);
 });

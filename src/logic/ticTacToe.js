@@ -50,7 +50,6 @@ class ticTacToe
     
     if(this.nrOfmoves === 9 && !this.winStatus){
       this.draws++;
-      return true;
     }
   }
 
