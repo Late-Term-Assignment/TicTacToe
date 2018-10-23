@@ -13,33 +13,22 @@ class consoleUI {
         this.startGame = false;
     }
 
-    beginGameInput(){
-        
-        
-        return input;
-    }
-
-    beginGame(input) {
-        var answer = input;
-        console.log("Welcome to Tic-Tac-Toe! ");
+    beginGame() {
+        console.log("Welcome to Tic-Tak-Toe! ");
         console.log("The rules are simple, if you are not familiar with them, google them.");
         rl.question('If you want to begin the game, types (b)egin! If you want to quit type (q)uit.\t',
         (answer) => {
-            if(answer === 'b') {
-                var startmsg = "very good, lets go!"
+            if(answer == 'b') {
                 rl.close();
                 this.startGame = true; 
-                return answer;
-                //cui.printBoard();
+                cui.printBoard();
            }
-           else if(answer === 'q') {
+           else if(answer == 'q') {
                rl.close();
-               //console.log("Thank you, come again!");
-               //return answer;
+               console.log("Thank you, come again!");
            }
            else {
                console.log("No legal input, try again!"); 
-               //return answer;
                cui.beginGame();
            } 
         });
