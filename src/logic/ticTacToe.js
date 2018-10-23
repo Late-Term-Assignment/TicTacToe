@@ -1,7 +1,6 @@
 // ticTacToe.js
 class ticTacToe
-{
-  
+{ 
   constructor(){
       this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       this.playerTurn = "X";
@@ -72,7 +71,13 @@ class ticTacToe
     this.nrOfmoves = 0;
     this.winStatus = 0;
   }
-  
+
+  newSession(){
+    this.resetBoard();
+    this.xWins = 0;
+    this.oWins = 0;
+    this.draws = 0;
+  }
 }
 
 

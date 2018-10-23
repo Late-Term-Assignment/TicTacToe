@@ -94,3 +94,8 @@ test("should return 2 for draw", () => {
   tester.checkWinStatus()
   expect(tester.winStatus).toBe(2);
 });
+
+test("should return 0 for xWins after new session", () => {
+  tester.newSession();
+  expect(tester.xWins).toBe(0);
+});
