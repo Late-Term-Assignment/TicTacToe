@@ -33,6 +33,11 @@ class ticTacToe
         return true;
       }
     }
+    for(var i = 0; i < 3; i++){
+      if(this.board[i] === this.board[i+3] && this.board[i] === this.board[i+6]){
+        return true;
+      }
+    }
     return false;
   }
 
