@@ -1,9 +1,9 @@
 // ticTacToe.js
 class ticTacToe
 {
-    initBoard(){
-        return [null, null, null, null, null, null, null, null, null];
-    }
+  constructor(){
+      this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  }
 }
 
 

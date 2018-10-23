@@ -4,7 +4,7 @@ const ticTacToe = require("./logic/ticTacToe");
 const main = new ticTacToe();
 
 app.get("/ticTacToe", (req, res) => {
-	res.send({"name": main.initBoard()})
+	res.send({"name": main.board})
 });
 
 module.exports = app;
