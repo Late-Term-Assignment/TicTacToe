@@ -39,6 +39,9 @@ class ticTacToe
         this.winStatus = true;
       }
     }
+    if(this.board[0] === this.board[4] && this.board[0] === this.board[8]){
+      this.winStatus = true;
+    }
   }
 
   resetBoard(){

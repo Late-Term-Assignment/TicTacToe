@@ -56,11 +56,20 @@ test("should return true for win check on square 4-6", () => {
   expect(tester.winStatus).toBe(true);
 });
 
-test("should return true for win check on square 2,5,8", () => {
+test("should return true for win check on square 2,5,8 (vertical check)", () => {
   tester.resetBoard();
   tester.makeMove(2);
   tester.makeMove(5);
   tester.makeMove(8);
+  tester.checkWinStatus();
+  expect(tester.winStatus).toBe(true);
+});
+
+test("should return true for win check on square 1,5,9 (diagonal check)", () => {
+  tester.resetBoard();
+  tester.makeMove(1);
+  tester.makeMove(5);
+  tester.makeMove(9);
   tester.checkWinStatus();
   expect(tester.winStatus).toBe(true);
 });
