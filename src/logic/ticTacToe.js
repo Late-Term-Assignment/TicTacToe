@@ -10,7 +10,6 @@ class ticTacToe
   makeMove(move){
     console.log("It is X's turn to move: ");
     this.board[move - 1] = this.playerTurn;
-    return this.board;
   }
 
   changePlayerTurn(){
