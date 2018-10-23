@@ -48,6 +48,7 @@ test("should return a new board", () => {
 });
 
 test("should return true for win check on square 4-6", () => {
+  tester.resetBoard();
   tester.makeMove(4);
   tester.makeMove(5);
   tester.makeMove(6);
@@ -56,6 +57,7 @@ test("should return true for win check on square 4-6", () => {
 });
 
 test("should return true for win check on square 2,5,8", () => {
+  tester.resetBoard();
   tester.makeMove(2);
   tester.makeMove(5);
   tester.makeMove(8);
