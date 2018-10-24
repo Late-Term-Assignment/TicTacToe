@@ -3,7 +3,6 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-COVERALLS_REPO_TOKEN: RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
 jobs:
   build:
     docker:
@@ -36,4 +35,10 @@ jobs:
       - run: yarn test
 test:
   override:
-    - npm run test-ci
+  - bundle exec rake circleci:
+      parallel: false
+      timeout: 900
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
