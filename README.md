@@ -1,5 +1,6 @@
-# TicTacToe
+# TicTacToe 
 Tic-Tac-Toe web-app running in browser using Node.js and continuous integration
+[![CircleCI](https://circleci.com/gh/Late-Term-Assignment/TicTacToe.svg?style=svg)](https://circleci.com/gh/Late-Term-Assignment/TicTacToe)
 
 ## Documentation
 Documentation about the following items is kept in the **docs** folder:
@@ -15,12 +16,3 @@ Documentation about the following items is kept in the **docs** folder:
 - Ingi Þór Sigurðsson
 - Sindri Dan Garðarsson
 - Tyler Elías Jones
-
-
-## CircleCI status
-
-### Master Branch
-[![CircleCI](https://circleci.com/gh/Late-Term-Assignment/TicTacToe.svg?style=svg)](https://circleci.com/gh/Late-Term-Assignment/TicTacToe)
-
-### Dev Branch
-[![CircleCI](https://circleci.com/gh/Late-Term-Assignment/TicTacToe/tree/dev.svg?style=svg)](https://circleci.com/gh/Late-Term-Assignment/TicTacToe/tree/dev)
