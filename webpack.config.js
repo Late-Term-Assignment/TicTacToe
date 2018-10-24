@@ -15,12 +15,6 @@ module.exports = {
     devServer: {
         port: 3000,
         open: true,
-        compress: true/*
-        proxy: {
-            '/api/**': {
-              target: 'http://localhost:8084',
-              secure: false,
-            }
-        }*/
-    }
+        compress: true
+    },
 }
