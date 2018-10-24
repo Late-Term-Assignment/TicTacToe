@@ -16,13 +16,7 @@ server.listen(5000, 'localhost', () => {
   console.log('dev server listening on port 5000');
 });
 
-const app = require('./index');
+const app = require('./src/server/api');
 app.listen(8080, () => {
     console.log("Server is running on port 8080");
 });
-
-/*
-const app = require('./index');
-app.listen(8080, () => {
-    console.log("Server is running on port 8080");
-});*/
