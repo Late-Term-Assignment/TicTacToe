@@ -12,11 +12,15 @@ webpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 const server = new webpackDevServer(compiler, options);
 
-server.listen(5000, 'localhost', () => {
-  console.log('dev server listening on port 5000');
+// Start api server and frontend server
+const API_PORT = 6060;
+const FRONT_PORT = 3000;
+const app = require('./src/server/api');
+
+server.listen(FRONT_PORT, 'localhost', () => {
+  console.log('dev server listening on port ' + FRONT_PORT);
 });
 
-const app = require('./src/server/api');
-app.listen(8080, () => {
-    console.log("Server is running on port 8080");
+app.listen(API_PORT, () => {
+    console.log("Server is running on port " + API_PORT);
 });
