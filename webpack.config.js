@@ -1,6 +1,8 @@
 // webpack.config.js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
 module.exports = {
     entry: './src/client/index.js',
     output: {
@@ -10,17 +12,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Greeting page'
-        })
-    ],
-    devServer: {
-        port: 3000,
-        open: true,
-        compress: true/*
-        proxy: {
-            '/api/**': {
-              target: 'http://localhost:8084',
-              secure: false,
-            }
-        }*/
-    }
+        }),
+        new webpack.HotModuleReplacementPlugin()
+    ]
 }
