@@ -8,7 +8,7 @@
     "run": "node index.js",
     "watch": "jest --watchAll",
     "build": "webpack",
-    "dev-server": "webpack-dev-server --open"
+    "dev-server": "webpack-dev-server --open --hot --inline"
   },
   "keywords": [
     "Tic-Tac-Toe"
