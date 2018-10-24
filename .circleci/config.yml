@@ -15,8 +15,9 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
-
+  	COVERALLS_REPO_TOKEN: RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
     steps:
+	
       - checkout
 
       # Download and cache dependencies
@@ -32,8 +33,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
+		
+	  - test: npm run test-ci
       # run tests!
       - run: yarn test
-
-
