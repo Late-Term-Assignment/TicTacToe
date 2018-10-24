@@ -1,6 +1,9 @@
 body {
   margin: 0px;
+  padding: 0px;
   background-color: darkgray;
+  font-family: fantasy;
+  
 }
 
 h1 {
@@ -8,7 +11,7 @@ h1 {
   background-color: darkgray;
   margin: 0px;
   padding: 20px;
-  color: white;
+  color: rgb(70,70,70);
   font-size: 300% 
 }
 
@@ -25,6 +28,7 @@ table {
 }
 
 .square {
+  padding: 0px;
   width: 32%;
   height: 100px;
   text-align: center;
@@ -33,5 +37,14 @@ table {
 }
 
 .square:hover {
-  background-color: rgba(209, 209, 209, 0.1);
+  background-color: rgba(209, 209, 209, 0.2);
+}
+
+.vert-mid{
+  border-left : 3px solid rgb(70,70,70);;
+  border-right : 3px solid rgb(70,70,70);;
+}
+.hor-mid{
+  border-top: 3px solid rgb(70,70,70);;
+  border-bottom: 3px solid rgb(70,70,70);;
 }
