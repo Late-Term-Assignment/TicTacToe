@@ -11,4 +11,8 @@ app.get("/ticTacToe/currentPlayerStatus", (req, res) => {
 	res.send({"currentPlayerStatus": game.playerTurn})
 });
 
+app.get("/ticTacToe/currentPlayerStatusChanged", (req, res) => {
+	res.send({"currentPlayerStatusChanged": game.playerTurn}) //use change function and then read variable
+});
+
 module.exports = app;
