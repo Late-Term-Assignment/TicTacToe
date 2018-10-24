@@ -14,18 +14,5 @@ module.exports = {
             title: 'Greeting page'
         }),
         new webpack.HotModuleReplacementPlugin()
-    ],
-    devServer: {
-        contentBase: './dist',
-        hot: true,
-        port: 3000,
-        open: true,
-        compress: true/*
-        proxy: {
-            '/api/**': {
-              target: 'http://localhost:8084',
-              secure: false,
-            }
-        }*/
-    }
+    ]
 }
