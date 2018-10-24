@@ -34,3 +34,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       - run: yarn test
+test:
+  override:
+    - npm run test-ci
