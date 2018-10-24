@@ -26,4 +26,4 @@ Documentation about the following items is kept in the **docs** folder:
 [![CircleCI](https://circleci.com/gh/Late-Term-Assignment/TicTacToe/tree/dev.svg?style=svg)](https://circleci.com/gh/Late-Term-Assignment/TicTacToe/tree/dev)
 
 ### Code Coverage
-[![Coverage Status](https://coveralls.io/repos/github/Late-Term-Assignment/TicTacToe/badge.svg?branch=dev)](https://coveralls.io/github/Late-Term-Assignment/TicTacToe?branch=dev)
+[![Coverage Status](https://coveralls.io/repos/github/Late-Term-Assignment/TicTacToe/badge.svg?branch=dev)](https://coveralls.io/github/Late-Term-Assignment/TicTacToe?branch=CodeCoverageSetup)
