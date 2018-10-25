@@ -16,11 +16,6 @@ app.get("/ticTacToe/currentPlayerStatusChanged", (req, res) => {
 	res.send({"currentPlayerStatusChanged": game.playerTurn}) //use change function and then read variable
 });
 
-app.get("/ticTacToe/currentPlayerStatusChanged", (req, res) => {
-	game.changePlayerTurn()
-	res.send({"currentPlayerStatusChanged": game.playerTurn}) //use change function and then read variable
-});
-
 app.get("/ticTacToe/moveMade", (req, res) => {
 	game.makeMove(3)
 	res.send({"moveMade": game.board}) //use change function and then read variable
