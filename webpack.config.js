@@ -37,7 +37,11 @@ module.exports = {
             template: './src/client/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new CleanWebpackPlugin(paths, options)
+        new CleanWebpackPlugin(paths, options),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        })
     ],
     module: {
       rules: [
