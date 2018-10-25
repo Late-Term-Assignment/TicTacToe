@@ -2,12 +2,13 @@
   "name": "late_term_assignment",
   "version": "1.0.0",
   "description": "Tic-Tac-Toe built using continuous delivery",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "jest",
     "run": "node index.js",
     "watch": "jest --watchAll",
-    "build": "webpack"
+    "build": "webpack",
+    "dev-server": "webpack-dev-server --open"
   },
   "keywords": [
     "Tic-Tac-Toe"
