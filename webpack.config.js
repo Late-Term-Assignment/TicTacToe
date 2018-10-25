@@ -33,9 +33,21 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Greeting page'
+            title: 'Gunnar',
+            template: './src/client/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(paths, options)
-    ]
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        }
+      ]
+    }
 }
