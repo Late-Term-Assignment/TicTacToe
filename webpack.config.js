@@ -38,10 +38,6 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(paths, options),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        })
     ],
     module: {
       rules: [
