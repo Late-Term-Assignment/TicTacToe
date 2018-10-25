@@ -1,4 +1,4 @@
 // index.js
-import './styles.css';
+import css from './styles.css';
 const _ = require("lodash");
 
