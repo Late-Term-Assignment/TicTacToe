@@ -2,6 +2,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+// clean options
+var options = [
+    verbose = true,
+    dry = false,
+    watch = true
+]
+
+// paths to clean
+var paths = [
+    'dist'
+]
 
 module.exports = {
     entry: {
@@ -23,5 +36,6 @@ module.exports = {
             title: 'Greeting page'
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin(paths, options)
     ]
 }
