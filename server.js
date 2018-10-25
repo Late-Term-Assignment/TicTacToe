@@ -1,6 +1,3 @@
-const webpack = require('webpack');
-
-// Start api server and frontend server
 const API_PORT = 6060;
 const app = require('./src/server/api');
 
