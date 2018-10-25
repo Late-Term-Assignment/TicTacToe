@@ -7,7 +7,7 @@ const api = require("./api/index");
 app.use(express.static(path.join(__dirname, "../", "dist")));
 
 // Use the API router
-app.use("/api", api);
+app.use("/", api);
 
 // Catch all other requests
 app.get("*", (req, res) => {
