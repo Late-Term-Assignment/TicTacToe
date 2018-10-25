@@ -22,7 +22,7 @@ module.exports = {
     },
     output: {
         filename: '[name].main.js',
-        path: __dirname,
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
     devtool: 'inline-source-map',
