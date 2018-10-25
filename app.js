@@ -7,9 +7,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-	res.sendFile(__dirname, '/dist/index.html');
+	res.sendFile(__dirname);
 });
-
 app.listen(PORT, () => {
 	console.log("Server running on port " + PORT);
 });

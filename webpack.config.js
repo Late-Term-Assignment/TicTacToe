@@ -18,11 +18,12 @@ var paths = [
 
 module.exports = {
     entry: {
+        path: path.resolve(__dirname, './src/client/index.js'),
         app: './src/client/index.js'
     },
     output: {
         filename: '[name].main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname),
         publicPath: '/'
     },
     devtool: 'inline-source-map',
@@ -33,7 +34,6 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Gunnar',
             template: './src/client/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
