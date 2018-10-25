@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         filename: '[name].main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: __dirname,
         publicPath: '/'
     },
     devtool: 'inline-source-map',
