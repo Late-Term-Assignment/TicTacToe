@@ -2,13 +2,15 @@
   "name": "late_term_assignment",
   "version": "1.0.0",
   "description": "Tic-Tac-Toe built using continuous delivery",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "jest",
-    "run": "node index.js",
+    "test": "jest --verbose --coverage",
     "watch": "jest --watchAll",
     "build": "webpack",
-    "dev-server": "webpack-dev-server --open"
+    "heroku-postbuild": "webpack -p",
+    "start": "node index.js",
+    "dev-server": "webpack-dev-server --open",
+    "serverTest": "jest --config config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
     "Tic-Tac-Toe"
@@ -21,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
-    "express": "^4.16.4",
+    "coveralls": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "supertest": "^3.3.0",
@@ -30,6 +32,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "express": "^4.16.4"
   }
 }
