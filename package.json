@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "test": "jest --verbose --coverage",
-    "run": "node index.js",
     "watch": "jest --watchAll",
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
