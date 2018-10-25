@@ -2,7 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // clean options
 var options = [
@@ -17,10 +17,19 @@ var paths = [
 ]
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: {
+        app: './src/client/index.js'
+    },
     output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].main.js',
+        path: __dirname,
+        publicPath: '/'
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        port: 3000,
+        open: true,
+        contentBase: './dist'
     },
     plugins: [
         new HtmlWebpackPlugin({
