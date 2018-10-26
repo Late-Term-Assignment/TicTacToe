@@ -11,11 +11,8 @@ describe("GET /newGame", () => {
 
 describe("POST /makeMove/5", () => {
     it("should be able to make a move", async () => {
-        const one = await request(app).post("/makeMove/9")
-        const two= await request(app).post("/makeMove/7")
-        const three= await request(app).post("/makeMove/1")
-        const four= await request(app).post("/makeMove/2")
-        const resss = await request(app).post("/getBoard")
-        expect(resss.body).toEqual({ "GameBoard": ["X", "O", 3, 4, 5, 6, "O", 8, "X"]});
+        const one = await request(app).post("/makeMove/5")
+        const res = await request(app).post("/getBoard")
+        expect(res.body).toEqual({ "GameBoard": [1, 2, 3, 4, "X", 6, 7, 8, 9]});
     });
 })
