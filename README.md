@@ -4,19 +4,27 @@ Tic-Tac-Toe web-app running in browser using Node.js and continuous integration
 [![Build Status][circleCI-image]][circleCI-url] [![Code coverage][coverage-image]][coverage-url]
 
 ## Documentation
+
 Documentation about the following items is kept in the **docs** folder:
 - Development manual
 - Administration manual
 - Design report
 
 ## Developers
-- Arnar Pálmi Elvarsson
-- Brynjar Örn Grétarsson 
-- Daði Steinn Brynjarsson
-- Hallgrímur Snær Andrésson
-- Ingi Þór Sigurðsson
-- Sindri Dan Garðarsson
-- Tyler Elías Jones
+
+* **Arnar Pálmi Elvarsson** - *arnare15@ru.is* - [github](https://github.com/)
+* **Brynjar Örn Grétarsson** - *brynjarog17@ru.is* - [github](https://github.com/brynjarorng)
+* **Daði Steinn Brynjarsson** - *dadib17@ru.is* - [girhub](https://github.com/dadisteinn)
+* **Hallgrímur Snær Andrésson** - *hallgrimura17@ru.is* - [github](https://github.com/hallgrimura17)
+* **Ingi Þór Sigurðsson** - *ingis17@ru.is* - [github](https://github.com/flimster)
+* **Tyler Elías Jones** - *tylerj17@ru.is* - [github](https://github.com/tylerelias)
+* **Sindri Dan Garðarsson** - *sindrig17@ru.is* - [github](https://github.com/)
+
+## Built with
+
+* [VS Code](https://code.visualstudio.com/Download) - Code editor
+* [NodeJS](https://nodejs.org) - JavaScript runtime
+* [Express](https://expressjs.com/) - Web application framework
 
 
 [circleCI-image]: https://circleci.com/gh/Late-Term-Assignment/TicTacToe.svg?style=svg
