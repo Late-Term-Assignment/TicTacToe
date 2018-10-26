@@ -8,8 +8,7 @@
     "watch": "jest --watchAll",
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
-    "start": "node run app.js",
-    "run start": "node run app.js",
+    "start": "node app.js",
     "dev-server": "webpack-dev-server --open",
     "serverTest": "jest --config config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -35,7 +34,8 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "lodash": "^4.17.11",
-    "express": "^4.16.4"
+    "node-fetch": "^2.2.0"
   }
 }
