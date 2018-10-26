@@ -1,12 +1,11 @@
 const request = require("supertest");
 const app = require("../app");
 
-
-
 describe("GET /newGame", () => {
     it("should return the game board in its initial state", async () => {
         const res = await request(app).get("/newGame");
         expect(res.status).toBe(200);
+        expect(res.body.game.board).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
 });
 
