@@ -10,10 +10,10 @@ function makeMove()
     function enableTxt(elem) {
       var id = $(elem).attr("id");
       fetchThis("makeMove/" + id);
-      this.removeEventListener("click", makeMove);
-      //fetchThis("getBoard");
-      this.innerHTML = "Y";
     }
+    this.removeEventListener("click", makeMove);
+    //fetchThis("getBoard");
+    this.innerHTML = "Y";
 }
 function fetchThis(toFetch)
 {
