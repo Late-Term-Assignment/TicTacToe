@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "jest --verbose --coverage",
+    "build-test": "npm run build && npm run test",
     "watch": "jest --watchAll",
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
