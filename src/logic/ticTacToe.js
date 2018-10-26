@@ -5,7 +5,7 @@ class ticTacToe
       this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       this.playerTurn = "X";
       this.winStatus = 0;   //0 = no win, 1 = win, 2 = draw
-      this.nrOfmoves = 9;
+      this.nrOfmoves = 0;
       this.xWins = 0;
       this.oWins = 0;
       this.draws = 0;
