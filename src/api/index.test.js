@@ -12,3 +12,16 @@ describe('POST /newGame', function() {
         });
     });
 });
+
+describe('GET /getBoard', function() {
+    it('should return the current game board', function(done) {
+      request(app)
+        .get('/getBoard')
+        .expect(200)
+        .expect({"GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9]})
+        .end(function(err, res) {
+          if (err) return done(err);
+          done();
+        });
+    });
+});

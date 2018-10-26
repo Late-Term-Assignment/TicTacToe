@@ -8,4 +8,8 @@ router.post("/newGame", (req, res) => {
     res.send('Test');
 });
   
+router.get("/getBoard", (req, res) => {
+    res.send({ "GameBoard": game.board });
+});
+
 module.exports = router;
