@@ -1,5 +1,7 @@
 # TicTacToe
+
 Tic-Tac-Toe web-app running in browser using Node.js and continuous integration
+[![Build Status][circleCI-image]][circleCI-url] [![Code coverage][coverage-image]][coverage-url]
 
 ## Documentation
 Documentation about the following items is kept in the **docs** folder:
@@ -17,10 +19,8 @@ Documentation about the following items is kept in the **docs** folder:
 - Tyler Elías Jones
 
 
-## CircleCI status
+[circleCI-image]: https://circleci.com/gh/Late-Term-Assignment/TicTacToe.svg?style=svg
+[circleCI-url]: https://circleci.com/gh/Late-Term-Assignment/TicTacToe
 
-### Master Branch
-[![CircleCI](https://circleci.com/gh/Late-Term-Assignment/TicTacToe.svg?style=svg)](https://circleci.com/gh/Late-Term-Assignment/TicTacToe)
-
-### Dev Branch
-[![CircleCI](https://circleci.com/gh/Late-Term-Assignment/TicTacToe/tree/dev.svg?style=svg)](https://circleci.com/gh/Late-Term-Assignment/TicTacToe/tree/dev)
+[coverage-image]: https://coveralls.io/repos/github/Late-Term-Assignment/TicTacToe/badge.svg?branch=CodeCoverageSetup
+[coverage-url]: https://coveralls.io/github/Late-Term-Assignment/TicTacToe?branch=CodeCoverageSetup
