@@ -144,6 +144,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#Visual Studio Code
+# Visual Studio Code
 .vscode/*
+
+# Dist folder
+dist
+
 # End of https://www.gitignore.io/api/node,linux,macos,windows
