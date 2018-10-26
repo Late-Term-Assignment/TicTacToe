@@ -12,13 +12,13 @@ Documentation about the following items is kept in the **docs** folder:
 
 ## Developers
 
-* **Arnar Pálmi Elvarsson** - *arnare15@ru.is* - [github](https://github.com/)
-* **Brynjar Örn Grétarsson** - *brynjarog17@ru.is* - [github](https://github.com/brynjarorng)
-* **Daði Steinn Brynjarsson** - *dadib17@ru.is* - [github](https://github.com/dadisteinn)
-* **Hallgrímur Snær Andrésson** - *hallgrimura17@ru.is* - [github](https://github.com/hallgrimura17)
-* **Ingi Þór Sigurðsson** - *ingis17@ru.is* - [github](https://github.com/flimster)
-* **Tyler Elías Jones** - *tylerj17@ru.is* - [github](https://github.com/tylerelias)
-* **Sindri Dan Garðarsson** - *sindrig17@ru.is* - [github](https://github.com/)
+* Arnar Pálmi Elvarsson - *arnare15* - [github](https://github.com/)
+* Brynjar Örn Grétarsson - *brynjarog17* - [github](https://github.com/brynjarorng)
+* Daði Steinn Brynjarsson - *dadib17* - [github](https://github.com/dadisteinn)
+* Hallgrímur Snær Andrésson - *hallgrimura17* - [github](https://github.com/hallgrimura17)
+* Ingi Þór Sigurðsson - *ingis17* - [github](https://github.com/flimster)
+* Tyler Elías Jones - *tylerj17* - [github](https://github.com/tylerelias)
+* Sindri Dan Garðarsson - *sindrig17* - [github](https://github.com/)
 
 ## Built with
 
