@@ -1,18 +1,14 @@
 # About
 
-This is the late term assignment Tic-tac-toe from group Mario lets-ago.
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deplay the project on a live system.
+These instructions will get you a copy of the project deployed on a live server. See [DevelopmentManual.md](./DevelopmentManual.md) for notes on how to get the project running on your local machine for development and testing purposes.
 
 ## Prerequisites
 
 The backend depends on NodeJS (v8.12.0). 
 
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Source control
 
-* [NodeJS](https://nodejs.org/en/download/)
+* [NodeJS](https://nodejs.org/en/download/) - JavaScript runtime
 
 ## Installing
 
@@ -23,31 +19,3 @@ Next you need to clone the repo. Open a terminal and cd into the appropriate dir
 
 When the repo is up and running you need to install node dependencies
 * `npm install`
-
-If you are considering contributing to the project we recommend branching out from the dev branch
-* `git checkout dev`
-* `git checkout -b [Branch name]`
-
-## Build
-
-To build the server run the following command
-* `npm run build`
-
-## Development server
-
-Now everything should be set up and you can deploy the server with
-* `npm start`
-
-## Running the tests
-
-
-## Running unit tests
-
-Unit tests were implemented using jest. Use the following command to run the unit tests:
-* `npm test`
-
-## Running end-to-end tests
-
-
-## Further help
-
