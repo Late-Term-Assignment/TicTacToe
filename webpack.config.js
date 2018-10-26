@@ -46,8 +46,12 @@ module.exports = {
           use: [
             'style-loader',
             'css-loader'
-          ]
-        }
+        ]
+        },
+        {
+            test: /\.node$/,
+            use: 'node-loader'
+          }
       ]
     }
 }
