@@ -14,7 +14,7 @@ Documentation about the following items is kept in the **docs** folder:
 
 * **Arnar Pálmi Elvarsson** - *arnare15@ru.is* - [github](https://github.com/)
 * **Brynjar Örn Grétarsson** - *brynjarog17@ru.is* - [github](https://github.com/brynjarorng)
-* **Daði Steinn Brynjarsson** - *dadib17@ru.is* - [girhub](https://github.com/dadisteinn)
+* **Daði Steinn Brynjarsson** - *dadib17@ru.is* - [github](https://github.com/dadisteinn)
 * **Hallgrímur Snær Andrésson** - *hallgrimura17@ru.is* - [github](https://github.com/hallgrimura17)
 * **Ingi Þór Sigurðsson** - *ingis17@ru.is* - [github](https://github.com/flimster)
 * **Tyler Elías Jones** - *tylerj17@ru.is* - [github](https://github.com/tylerelias)
