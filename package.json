@@ -8,7 +8,8 @@
     "watch": "jest --watchAll",
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
-    "start": "node app.js",
+    "start": "node run app.js",
+    "run start": "node run app.js",
     "dev-server": "webpack-dev-server --open",
     "serverTest": "jest --config config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
