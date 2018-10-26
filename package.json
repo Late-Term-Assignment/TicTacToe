@@ -4,7 +4,8 @@
   "description": "Tic-Tac-Toe built using continuous delivery",
   "private": true,
   "scripts": {
-    "test": "jest --verbose --coverage",
+    "test": "jest --verbose --coverage --detectOpenHandles",
+    "build-test": "npm run build && npm run test",
     "watch": "jest --watchAll",
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
