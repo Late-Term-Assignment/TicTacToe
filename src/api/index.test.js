@@ -1,9 +1,14 @@
 const request = require("supertest");
 const app = require("../app");
 
-describe("GET /ticTacToe", () => {
-    it("should return 200 status code", async () => {
-      const res = await request(app).get("/newGame");
-      expect(res.status).toBe(200);
+describe('POST /newGame', function() {
+    it('should return 200 status code', function(done) {
+      request(app)
+        .post('/newGame')
+        .expect(200)
+        .end(function(err, res) {
+          if (err) return done(err);
+          done();
+        });
     });
 });
