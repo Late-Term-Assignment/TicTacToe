@@ -110,7 +110,7 @@ test("should return 0 for xWins after new session", () => {
   expect(tester.xWins).toBe(0);
 });
 
-test("O should win", () => {
+test("O should win horizontally", () => {
   tester.newSession();
   tester.makeMove(4);
   tester.makeMove(1);
@@ -119,4 +119,35 @@ test("O should win", () => {
   tester.makeMove(9);
   tester.makeMove(3);
   expect(tester.oWins).toBe(1);
+});
+
+test("O should win vertically", () => {
+  tester.newSession();
+  tester.makeMove(3);
+  tester.makeMove(1);
+  tester.makeMove(5);
+  tester.makeMove(4);
+  tester.makeMove(9);
+  tester.makeMove(7);
+  expect(tester.oWins).toBe(1);
+});
+
+
+
+test("O should win, diagonally", () => {
+  tester.newSession();
+  tester.makeMove(4);
+  tester.makeMove(3);
+  tester.makeMove(1);
+  tester.makeMove(5);
+  tester.makeMove(9);
+  tester.makeMove(7);
+  expect(tester.oWins).toBe(1);
+});
+
+test("O will will try to place his O into X's place on the board", () => {
+  tester.newSession();
+  tester.makeMove(1);
+
+  expect(tester.validateInput(1)).toBe(false);
 });
