@@ -42,3 +42,9 @@ test:
 notify:
   webhooks:
     - url: https://coveralls.io/webhook?repo_token=RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
+
+deployment:
+  staging:
+    branch: dev
+    heroku:
+      appname: TicTacToe
