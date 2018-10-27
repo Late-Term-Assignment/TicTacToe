@@ -1,24 +1,25 @@
 // webLogic.js
+initialize();
 function initialize(){
     for(var i = 0; i < 9; i++){
         document.getElementById(i.toString()).addEventListener("click", makeMove);
     }
+    document.getElementById("new-game").addEventListener("click", newGame);
+    document.getElementById("reset").addEventListener("click", reset);
+
 }
-initialize();
-function makeMove()
-{
-    var id;
-    function enableTxt(elem) {
-        id = $(elem).attr("id");
-        fetchThis("makeMove/" + id);
-    }
+function newGame(){
+    fetchGet("newGame");
+}
+function reset(){
+}
+function makeMove(){
+    fetchPost("makeMove/" + this.id);
     this.removeEventListener("click", makeMove);
-    //fetchThis("getBoard");
     this.innerHTML = "Y";
 }
-function fetchThis(toFetch)
-{
-  fetch("http://localhost:3000/" + toFetch)
+function fetchPost(toFetch){
+  fetch("/" + toFetch, {method: 'POST'})
     .then(
       function(response) {
         if (response.status !== 200) {
@@ -30,6 +31,7 @@ function fetchThis(toFetch)
         // Examine the text in the response
         response.json().then(function(data) {
           console.log(data);
+          return data;
         });
       }
     )
@@ -37,5 +39,3 @@ function fetchThis(toFetch)
       console.log('Fetch Error :-S', err);
     });
 }
-
-
