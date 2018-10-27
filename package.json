@@ -7,7 +7,7 @@
     "test": "jest --verbose --coverage",
     "build-test": "npm run build && npm run test",
     "watch": "jest --coverage --watchAll",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --open --config webpack.prod.js",
     "heroku-postbuild": "webpack -p",
     "start": "node app.js",
     "dev-server": "webpack-dev-server --open --config webpack.dev.js",
