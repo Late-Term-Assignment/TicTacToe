@@ -14,17 +14,35 @@ var paths = [
 
 module.exports = {
     entry: {
+        path: path.resolve(__dirname, './src/client/index.js'),
         app: './src/app.js'
     },
-    plugins: [
-        new CleanWebPackPlugin([paths, options]),
-        new HtmlWebpackPlugin({
-            title: 'Production'
-        }),
-    ],
     output: {
         filename: '[name].main.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
-    }
+    },
+    plugins: [
+        new CleanWebPackPlugin(paths, options),
+        new HtmlWebpackPlugin({
+            title: 'Production',
+            template: './src/client/index.html'
+        }),
+    ],
+    module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [
+              'style-loader',
+              'css-loader'
+            ]
+          }
+        ]
+      },
+    node: {
+      fs: 'empty',
+      net: 'empty'
+    },
+    target: 'web'
 };
