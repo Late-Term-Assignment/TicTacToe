@@ -56,7 +56,7 @@ function updateBoard(board){
     if(board.TicTacToe.GameStatus != 0){
         for(var i = 1; i <= 9; i++)
         {
-            document.removeEventListener("click", makeMove);
+            document.getElementById(i.toString()).removeEventListener("click", makeMove);
         }
         document.getElementById("message").innerHTML = "Game Over";
 
