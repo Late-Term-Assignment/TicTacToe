@@ -91,7 +91,7 @@ test("should return 1 after x won", () => {
   expect(tester.xWins).toBe(1);
 });
 
-test("should return 2 for draw", () => {
+test("should return 3 for draw", () => {
   tester.newSession();
   tester.makeMove(1);
   tester.makeMove(5);
@@ -102,7 +102,7 @@ test("should return 2 for draw", () => {
   tester.makeMove(6);
   tester.makeMove(9);
   tester.makeMove(8);
-  expect(tester.winStatus).toBe(2);
+  expect(tester.winStatus).toBe(3);
 });
 
 test("should return 0 for xWins after new session", () => {
