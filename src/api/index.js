@@ -28,7 +28,7 @@ router.get("/getBoard", (req, res) => {
     });
 });
 
-router.post("/makeMove/:move", (req, res) => {
+router.get("/makeMove/:move", (req, res) => {
     serverSideGame.makeMove(req.params.move);
     res.send({ "TicTacToe": {
         "GameBoard": serverSideGame.board,
