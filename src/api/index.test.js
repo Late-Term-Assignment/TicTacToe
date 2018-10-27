@@ -118,3 +118,20 @@ describe("POST /makeMove/{1, 1, 2}", () => {
                                 });
     });
 });
+
+// Create a new session and check if it is empty
+describe("GET /resetGame", () => {
+    it("should play with the game board then create a new session", async () => {
+        await request(app).get("/newGame");
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/2")
+        await request(app).post("/resetGame")
+        const res = await request(app).post("/getBoard")
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                                        "GameStatus": 0
+                                    }
+                                });
+    });
+});

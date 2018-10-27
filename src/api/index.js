@@ -33,4 +33,13 @@ router.post("/makeMove/:move", (req, res) => {
     res.status(200).send('Ok');
 });
 
+router.post("/resetGame", (req, res) => {
+    serverSideGame.newSession();
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus
+        }
+    });
+})
+
 module.exports = router;
