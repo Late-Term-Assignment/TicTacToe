@@ -32,8 +32,7 @@ test("should return false for illegal move", () => {
 });
 
 tester = new ticTacToe();
-test("should return 0 for win check on square 1-3", () => {
-  tester.checkWinStatus();
+test("should return 0 for win check", () => {
   expect(tester.winStatus).toBe(0);
 });
 
@@ -45,7 +44,6 @@ test("should return 1 for win check on square 1-3 for X", () => {
   tester.makeMove(2);
   tester.makeMove(8);
   tester.makeMove(3);
-  tester.checkWinStatus();
   expect(tester.winStatus).toBe(1);
 });
 
@@ -62,7 +60,6 @@ test("should return 1 for win check on square 4-6", () => {
   tester.makeMove(5);
   tester.makeMove(2);
   tester.makeMove(6);
-  tester.checkWinStatus();
   expect(tester.winStatus).toBe(1);
 });
 
@@ -74,7 +71,6 @@ test("should return 1 for win check on square 2,5,8 (vertical check)", () => {
   tester.makeMove(5);
   tester.makeMove(7);
   tester.makeMove(8);
-  tester.checkWinStatus();
   expect(tester.winStatus).toBe(1);
 });
 
@@ -86,7 +82,6 @@ test("should return 1 for win check on square 3,5,7 (diagonal check)", () => {
   tester.makeMove(5);
   tester.makeMove(6);
   tester.makeMove(7);
-  tester.checkWinStatus();
   expect(tester.winStatus).toBe(1);
 });
 
@@ -98,7 +93,6 @@ test("should return 1 after x won", () => {
   tester.makeMove(5);
   tester.makeMove(6);
   tester.makeMove(7);
-  tester.checkWinStatus();
   tester.updateScore();
   expect(tester.xWins).toBe(1);
 });
@@ -115,7 +109,6 @@ test("should return 2 for draw", () => {
   tester.makeMove(6);
   tester.makeMove(9);
   tester.makeMove(8);
-  tester.checkWinStatus()
   expect(tester.winStatus).toBe(2);
 });
 
