@@ -14,13 +14,13 @@ var paths = [
 
 module.exports = {
     entry: {
-        app: './src/app.js';
+        app: './src/app.js'
     },
     plugins: [
-        new CleanWebPackPlugin(['dist']),
+        new CleanWebPackPlugin([paths, options]),
         new HtmlWebpackPlugin({
             title: 'Production'
-        })
+        }),
     ],
     output: {
         filename: '[name].main.js',
