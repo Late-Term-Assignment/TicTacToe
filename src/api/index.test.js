@@ -128,7 +128,11 @@ describe("POST /resetGame", () => {
         const res = await request(app).get("/getBoard");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-                                        "GameStatus": 0
+                                        "GameStatus": 0,
+                                        "XWins": 0,
+                                        "OWins": 0,
+                                        "Draws": 0,
+                                        "Turn": "X"
                                     }
                                 });
     });
