@@ -24,6 +24,7 @@ class ticTacToe
       this.nrOfmoves++;
       this.changePlayerTurn();
       this.checkWinStatus();
+      this.updateScore();
     }
   }
 

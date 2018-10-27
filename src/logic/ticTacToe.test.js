@@ -87,13 +87,12 @@ test("should return 1 for win check on square 3,5,7 (diagonal check)", () => {
 
 tester = new ticTacToe();
 test("should return 1 after x won", () => {
-  tester.resetBoard();
+  tester.newSession();
   tester.makeMove(3);
   tester.makeMove(4);
   tester.makeMove(5);
   tester.makeMove(6);
   tester.makeMove(7);
-  tester.updateScore();
   expect(tester.xWins).toBe(1);
 });
 
@@ -116,4 +115,16 @@ tester = new ticTacToe();
 test("should return 0 for xWins after new session", () => {
   tester.newSession();
   expect(tester.xWins).toBe(0);
+});
+
+tester = new ticTacToe();
+test("O should win", () => {
+  tester.newSession();
+  tester.makeMove(4);
+  tester.makeMove(1);
+  tester.makeMove(5);
+  tester.makeMove(2);
+  tester.makeMove(9);
+  tester.makeMove(3);
+  expect(tester.oWins).toBe(1);
 });
