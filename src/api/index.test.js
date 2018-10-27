@@ -8,7 +8,11 @@ describe("GET /newGame", () => {
         expect(res.status).toBe(200);
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-                                        "GameStatus": 0
+                                        "GameStatus": 0,
+                                        "XWins": 0,
+                                        "OWins": 0,
+                                        "Draws": 0,
+                                        "Turn": "X"
                                         }
                                     });
     });
@@ -120,7 +124,7 @@ describe("POST /resetGame", () => {
         await request(app).get("/makeMove/1");
         await request(app).get("/makeMove/1");
         await request(app).get("/makeMove/2");
-        await request(app).post("/resetGame");
+        await request(app).get("/resetGame");
         const res = await request(app).get("/getBoard");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9],
