@@ -1,23 +1,35 @@
 // ticTacToe.js
 class ticTacToe
 { 
+// winStatus indicator:
+//      0 - Game in progress/not started
+//      1 - X has won
+//      2 - Y has won
+//      3 - tie
+
   constructor(){
       this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       this.playerTurn = "X";
-      this.winStatus = 0;   //0 = no win, 1 = win, 2 = draw
-      this.nrOfmoves = 9;
+      this.winStatus = 0;
+      this.nrOfmoves = 0;
       this.xWins = 0;
       this.oWins = 0;
       this.draws = 0;
+
   }
 
   makeMove(move){
-    this.board[move - 1] = this.playerTurn;
-    this.nrOfmoves++;
+    if(this.validateInput(move)) {
+      this.board[move - 1] = this.playerTurn;
+      this.nrOfmoves++;
+      this.changePlayerTurn();
+      this.checkWinStatus();
+      this.updateScore();
+    }
   }
 
   validateInput(move){
-    if(this.board[move - 1] === "X" || this.board[move - 1] === "O"){
+    if(this.board[move - 1] === "X" || this.board[move - 1] === "O" || move < 1 || move > 9){
       return false;
     }
     return true;
@@ -57,7 +69,7 @@ class ticTacToe
 
   updateScore(){
     if(this.winStatus === 1){
-      if(this.playerTurn === "X"){
+      if(this.playerTurn === "O"){
         this.xWins++;
       } else{
         this.oWins++;

@@ -23,7 +23,7 @@ describe("POST /makeMove/5", () => {
 
 // Make multiple moves
 describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
-    it("should be able to make a move", async () => {
+    it("should make multiple moves", async () => {
         await request(app).get("/newGame");
         await request(app).post("/makeMove/5")
         await request(app).post("/makeMove/7")
@@ -32,3 +32,25 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
         expect(res.body).toEqual({ "GameBoard": [1, 2, 3, 4, "X", 6, "O", 8, "X"]});
     });
 });
+
+
+// Test waiting for api changes and game logic changes
+/*
+// X wins the game
+describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
+    it("X should win the game", async () => {
+        await request(app).get("/newGame");
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/2")
+        await request(app).post("/makeMove/4")
+        await request(app).post("/makeMove/5")
+        await request(app).post("/makeMove/7")
+        const res = await request(app).post("/getBoard")
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": ["X", "O", 3, "X", "O", 6, "X", 8, 9],
+                                        "GameStatus": "1"
+                                    }
+                                });
+    });
+});
+*/
