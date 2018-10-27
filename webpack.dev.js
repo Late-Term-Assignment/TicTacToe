@@ -3,10 +3,9 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
     mode: 'development',
+    watch:true,
     devtool: 'inline-source-map',
-    devServer: {
-        port: 3000,
-        open: true,
-        contentBase: './dist'
-    }
+    watchOptions: {
+        poll: true
+      }
 });
