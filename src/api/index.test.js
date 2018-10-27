@@ -61,3 +61,22 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
                                 });
     });
 });
+
+// O wins the game
+describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
+    it("X should win the game", async () => {
+        await request(app).get("/newGame");
+        await request(app).post("/makeMove/5")
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/4")
+        await request(app).post("/makeMove/2")
+        await request(app).post("/makeMove/7")
+        await request(app).post("/makeMove/3")
+        const res = await request(app).post("/getBoard")
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": ["O", "O", "O", "X", "X", 6, "X", 8, 9],
+                                        "GameStatus": 2
+                                    }
+                                });
+    });
+});
