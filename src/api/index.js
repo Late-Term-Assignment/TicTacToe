@@ -22,7 +22,6 @@ router.post("/getBoard", (req, res) => {
 
 router.post("/makeMove/:move", (req, res) => {
     serverSideGame.makeMove(req.params.move);
-    serverSideGame.changePlayerTurn();
     res.status(200).send('Ok');
 });
 
