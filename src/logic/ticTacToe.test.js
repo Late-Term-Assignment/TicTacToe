@@ -134,7 +134,7 @@ test("O should win vertically", () => {
 
 
 
-test("O should win ", () => {
+test("O should win, diagonally", () => {
   tester.newSession();
   tester.makeMove(4);
   tester.makeMove(3);
@@ -143,4 +143,11 @@ test("O should win ", () => {
   tester.makeMove(9);
   tester.makeMove(7);
   expect(tester.oWins).toBe(1);
+});
+
+test("O will will try to place his O into X's place on the board", () => {
+  tester.newSession();
+  tester.makeMove(1);
+
+  expect(tester.validateInput(1)).toBe(false);
 });
