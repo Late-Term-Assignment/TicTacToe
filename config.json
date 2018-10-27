@@ -1,0 +1,10 @@
+{
+	"transform": {".*": "<rootDir>/node_modules/babel-jest"},
+	"moduleFileExtensions": ["js"],
+	"collectCoverageFrom": [
+	  "src/logic/*js",
+		"!src/api/WebLogic.js",
+		"src/api/*.js"
+	]
+  }
+  
