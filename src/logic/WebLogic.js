@@ -32,6 +32,9 @@ function fetchGet(toFetch){
         response.json().then(
         function(data) {
             updateBoard(data);
+            if(data.TicTacToe.GameStatus != 0){
+                endGame(data);
+            }
         });
       }
     )
@@ -40,10 +43,6 @@ function fetchGet(toFetch){
     });
 }
 function updateBoard(board){
-    document.getElementById("score1").innerHTML = board.TicTacToe.XWins;
-    document.getElementById("score2").innerHTML = board.TicTacToe.OWins;
-    document.getElementById("draws").innerHTML = board.TicTacToe.Draws;
-
     document.getElementById("message").innerHTML = board.TicTacToe.Turn + "'s turn";
     for(var i = 1; i <= 9; i++){
         if(board.TicTacToe.GameBoard[i - 1] == "X" || board.TicTacToe.GameBoard[i - 1] == "O" ){
@@ -53,12 +52,25 @@ function updateBoard(board){
             document.getElementById(i.toString()).innerHTML = null;
         }
     }
-    if(board.TicTacToe.GameStatus != 0){
-        for(var i = 1; i <= 9; i++)
-        {
-            document.getElementById(i.toString()).removeEventListener("click", makeMove);
-        }
-        document.getElementById("message").innerHTML = "Game Over";
-
+    
+}
+function endGame(board){
+    var message;
+    for(var i = 1; i <= 9; i++){
+        document.getElementById(i.toString()).removeEventListener("click", makeMove);
     }
+    if(board.TicTacToe.GameStatus == 1){
+        message = "X wins";
+    }
+    else if(board.TicTacToe.GameStatus == 2){
+        message = "O wins";
+    }
+    else{
+        message = "Draw";
+    }
+    document.getElementById("message").innerHTML = message;
+    document.getElementById("score1").innerHTML = board.TicTacToe.XWins;
+    document.getElementById("score2").innerHTML = board.TicTacToe.OWins;
+    document.getElementById("draws").innerHTML = board.TicTacToe.Draws;
+
 }
