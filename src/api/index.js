@@ -13,7 +13,11 @@ const serverSideGame = new ticTacToe();
 
 router.get("/newGame", (req, res) => {
     serverSideGame.resetBoard();
-    res.status(200).send({"game": serverSideGame});
+    res.status(200).send({ "TicTacToe": {
+                            "GameBoard": serverSideGame.board,
+                            "GameStatus": serverSideGame.winStatus
+                            }
+                        });
 });
   
 router.post("/getBoard", (req, res) => {

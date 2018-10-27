@@ -6,7 +6,11 @@ describe("GET /newGame", () => {
     it("should return the game board in its initial state", async () => {
         const res = await request(app).get("/newGame");
         expect(res.status).toBe(200);
-        expect(res.body.game.board).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                                        "GameStatus": 0
+                                        }
+                                    });
     });
 });
 
