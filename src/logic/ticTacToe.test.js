@@ -131,3 +131,16 @@ test("O should win vertically", () => {
   tester.makeMove(7);
   expect(tester.oWins).toBe(1);
 });
+
+
+
+test("O should win ", () => {
+  tester.newSession();
+  tester.makeMove(4);
+  tester.makeMove(3);
+  tester.makeMove(1);
+  tester.makeMove(5);
+  tester.makeMove(9);
+  tester.makeMove(7);
+  expect(tester.oWins).toBe(1);
+});
