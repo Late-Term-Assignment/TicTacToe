@@ -1,5 +1,6 @@
 // webLogic.js
 initialize();
+//add all eventlisteners
 function initialize(){
     for(var i = 1; i <= 9; i++){
         document.getElementById(i.toString()).addEventListener("click", makeMove);
@@ -8,18 +9,22 @@ function initialize(){
     document.getElementById("reset").addEventListener("click", reset);
 
 }
+//starts a new game but doesnt reset score
 function newGame(){
     fetchGet("/newGame");
     initialize();
 }
+//starts a new game and resets score
 function reset(){
     fetchGet("/resetGame");
     newGame();
 }
+//makes a move for the player and removes the event listener from the field
 function makeMove(){
     fetchGet("/makeMove/" + this.id);
     this.removeEventListener("click", makeMove);
 }
+//get the json from the API and call the function updateBoard and calls endGame if the game has ended
 function fetchGet(toFetch){
     fetch(toFetch, {method: 'GET'})
     .then(
@@ -39,11 +44,12 @@ function fetchGet(toFetch){
       }
     )
     .catch(function(err) {
-      console.log('Fetch Error :-S', err);
+      console.log('Fetch Error:', err);
     });
 }
 function updateBoard(board){
     document.getElementById("message").innerHTML = board.TicTacToe.Turn + "'s turn";
+    //inserts the fields from the array in board
     for(var i = 1; i <= 9; i++){
         if(board.TicTacToe.GameBoard[i - 1] == "X" || board.TicTacToe.GameBoard[i - 1] == "O" ){
             document.getElementById(i.toString()).innerHTML = board.TicTacToe.GameBoard[i - 1];
