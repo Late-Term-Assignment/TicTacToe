@@ -4,20 +4,58 @@ const router = express.Router();
 const ticTacToe = require('../logic/ticTacToe')
 const serverSideGame = new ticTacToe();
 
+// Game status indicator:
+//      0 - Game in progress/not started
+//      1 - X has won
+//      2 - Y has won
+//      3 - tie
+
 
 router.get("/newGame", (req, res) => {
     serverSideGame.resetBoard();
-    res.status(200).send({"game": serverSideGame});
+    res.status(200).send({ "TicTacToe": {
+                            "GameBoard": serverSideGame.board,
+                            "GameStatus": serverSideGame.winStatus,
+                            "XWins": serverSideGame.xWins,
+                            "OWins": serverSideGame.oWins,
+                            "Draws": serverSideGame.draws,
+                            "Turn": serverSideGame.playerTurn
+                            }
+                        });
 });
   
-router.post("/getBoard", (req, res) => {
-    res.send({ "GameBoard": serverSideGame.board });
+router.get("/getBoard", (req, res) => {
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus,
+        "XWins": serverSideGame.xWins,
+        "OWins": serverSideGame.oWins,
+        "Draws": serverSideGame.draws,
+        "Turn": serverSideGame.playerTurn
+        }
+    });
 });
 
-router.post("/makeMove/:move", (req, res) => {
+router.get("/makeMove/:move", (req, res) => {
     serverSideGame.makeMove(req.params.move);
-    serverSideGame.changePlayerTurn();
-    res.status(200).send('Ok');
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus,
+        "XWins": serverSideGame.xWins,
+        "OWins": serverSideGame.oWins,
+        "Draws": serverSideGame.draws,
+        "Turn": serverSideGame.playerTurn
+        }
+    });
 });
+
+router.get("/resetGame", (req, res) => {
+    serverSideGame.newSession();
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus
+        }
+    });
+})
 
 module.exports = router;
