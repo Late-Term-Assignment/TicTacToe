@@ -26,13 +26,13 @@ If you are considering contributing to the project we recommend branching out fr
 
 ## Build
 
-To build the project run the following command
+The development serer rebuilds itself and reloads when changes are made to it. If you want to manuall build it, run the following command
 * `npm run build`
 
-## Development server
+## deploy development server
 
-Now everything should be set up and you can deploy the server with
-* `npm start`
+Now everything should be set up and you can deploy the server with.
+* `npm run dev-server`
 
 ## Running unit tests
 

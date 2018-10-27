@@ -34,7 +34,8 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "lodash": "^4.17.11",
-    "express": "^4.16.4"
+    "markdown-pdf": "^9.0.0"
   }
 }

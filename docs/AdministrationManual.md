@@ -19,3 +19,8 @@ Next you need to clone the repo. Open a terminal and cd into the appropriate dir
 
 When the repo is up and running you need to install node dependencies
 * `npm install`
+
+## Deploy server
+
+Now everything should be set up and you can deploy the server with
+* `npm start`
