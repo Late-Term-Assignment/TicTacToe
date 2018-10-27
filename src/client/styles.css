@@ -27,7 +27,7 @@ h1 {
   width: 20%;
 }
 
-button {
+button.navButton{
   background-color: white;
   border: none;
   height: 100%;
@@ -66,6 +66,15 @@ table {
   background-color: rgba(70, 70, 70, 0.1);
 }
 
+button.squareButton {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
 #footer {
   color: white;
   background-color: rgb(70,70,70);
@@ -89,8 +98,4 @@ table {
 .hor-mid{
   border-top: 2px solid rgb(70,70,70);
   border-bottom: 2px solid rgb(70,70,70);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> ae268ec5ac78c082490326c4c831f33610f395d7
