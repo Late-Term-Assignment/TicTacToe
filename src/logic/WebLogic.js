@@ -7,9 +7,10 @@ function initialize(){
 initialize();
 function makeMove()
 {
+    var id;
     function enableTxt(elem) {
-      var id = $(elem).attr("id");
-      fetchThis("makeMove/" + id);
+        id = $(elem).attr("id");
+        fetchThis("makeMove/" + id);
     }
     this.removeEventListener("click", makeMove);
     //fetchThis("getBoard");
