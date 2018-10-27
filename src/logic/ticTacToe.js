@@ -84,11 +84,12 @@ class ticTacToe
   updateScore(){
     if(this.winStatus === 1){
         this.xWins++;
-      } else if(this.winStatus === 2) {
+      } 
+    else if(this.winStatus === 2) {
         this.oWins++;
     }
-    else{
-      this.draws++;
+    else if(this.winStatus === 3) {
+        this.draws++;
     }
   }
   //Completely resets the board and game status, restarting the session
