@@ -3,7 +3,7 @@
 	"moduleFileExtensions": ["js"],
 	"collectCoverageFrom": [
 	  "src/logic/*js",
-	  "src/server/*.js"
+	  "src/api/*.js"
 	]
   }
   
