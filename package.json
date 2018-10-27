@@ -9,9 +9,9 @@
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
     "start": "node app.js",
-    "dev-server": "webpack-dev-server --open",
-    "serverTest": "jest --config config.json && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "build-test": "npm run build && npm run test && npm run serverTest"
+    "dev-server": "webpack-dev-server --open --config webpack.dev.js",
+    "serverTest": "jest --config config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "watch-dev": "webpack --watch --config webpack.dev.js"
   },
   "keywords": [
     "Tic-Tac-Toe"
@@ -33,7 +33,6 @@
     "supertest": "^3.3.0",
     "webpack": "^4.22.0",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
