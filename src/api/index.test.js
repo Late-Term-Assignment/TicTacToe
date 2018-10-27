@@ -44,9 +44,6 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
     });
 });
 
-
-// Test waiting for api changes and game logic changes
-/*
 // X wins the game
 describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
     it("X should win the game", async () => {
@@ -59,9 +56,8 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
         const res = await request(app).post("/getBoard")
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": ["X", "O", 3, "X", "O", 6, "X", 8, 9],
-                                        "GameStatus": "1"
+                                        "GameStatus": 1
                                     }
                                 });
     });
 });
-*/
