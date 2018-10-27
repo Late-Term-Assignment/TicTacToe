@@ -80,3 +80,25 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
                                 });
     });
 });
+
+// check if there is a tie
+describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
+    it("X should win the game", async () => {
+        await request(app).get("/newGame");
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/5")
+        await request(app).post("/makeMove/2")
+        await request(app).post("/makeMove/3")
+        await request(app).post("/makeMove/7")
+        await request(app).post("/makeMove/4")
+        await request(app).post("/makeMove/6")
+        await request(app).post("/makeMove/9")
+        await request(app).post("/makeMove/8")
+        const res = await request(app).post("/getBoard")
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": ["X", "X", "O", "O", "O", "X", "X", "X", "O"],
+                                        "GameStatus": 3
+                                    }
+                                });
+    });
+});
