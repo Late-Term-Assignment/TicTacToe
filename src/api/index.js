@@ -13,16 +13,49 @@ const serverSideGame = new ticTacToe();
 
 router.get("/newGame", (req, res) => {
     serverSideGame.resetBoard();
-    res.status(200).send({"game": serverSideGame});
+    res.status(200).send({ "TicTacToe": {
+                            "GameBoard": serverSideGame.board,
+                            "GameStatus": serverSideGame.winStatus,
+                            "XWins": serverSideGame.xWins,
+                            "OWins": serverSideGame.oWins,
+                            "Draws": serverSideGame.draws,
+                            "Turn": serverSideGame.playerTurn
+                            }
+                        });
 });
   
-router.post("/getBoard", (req, res) => {
-    res.send({ "GameBoard": serverSideGame.board });
+router.get("/getBoard", (req, res) => {
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus,
+        "XWins": serverSideGame.xWins,
+        "OWins": serverSideGame.oWins,
+        "Draws": serverSideGame.draws,
+        "Turn": serverSideGame.playerTurn
+        }
+    });
 });
 
-router.post("/makeMove/:move", (req, res) => {
+router.get("/makeMove/:move", (req, res) => {
     serverSideGame.makeMove(req.params.move);
-    res.status(200).send('Ok');
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus,
+        "XWins": serverSideGame.xWins,
+        "OWins": serverSideGame.oWins,
+        "Draws": serverSideGame.draws,
+        "Turn": serverSideGame.playerTurn
+        }
+    });
 });
+
+router.get("/resetGame", (req, res) => {
+    serverSideGame.newSession();
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus
+        }
+    });
+})
 
 module.exports = router;
