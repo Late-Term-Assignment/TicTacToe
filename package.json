@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "build-test": "npm run build && npm run test",
-    "watch": "jest --watchAll",
+    "watch": "jest --coverage --watchAll",
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
     "start": "node app.js",
