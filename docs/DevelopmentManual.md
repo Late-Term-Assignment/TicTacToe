@@ -26,7 +26,7 @@ If you are considering contributing to the project we recommend branching out fr
 
 ## Build
 
-To build the server run the following command
+To build the project run the following command
 * `npm run build`
 
 ## Development server
@@ -34,12 +34,9 @@ To build the server run the following command
 Now everything should be set up and you can deploy the server with
 * `npm start`
 
-## Running the tests
-
-
 ## Running unit tests
 
-Unit testing is implemented using jest and the tests can be found in [ticTacToe.test.js](./src/logic/ticTacToe.test.js). 
+Unit testing is implemented using jest and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js). 
 Use the following command to run the unit tests.
 * `npm test`
 
