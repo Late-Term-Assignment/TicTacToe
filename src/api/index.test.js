@@ -102,3 +102,19 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
                                 });
     });
 });
+
+// Check what happens when trying to insert onto a n already occupied slot
+describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
+    it("X should win the game", async () => {
+        await request(app).get("/newGame");
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/1")
+        await request(app).post("/makeMove/2")
+        const res = await request(app).post("/getBoard")
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": ["X", "O", 3, 4, 5, 6, 7, 8, 9],
+                                        "GameStatus": 0
+                                    }
+                                });
+    });
+});
