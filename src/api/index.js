@@ -21,7 +21,11 @@ router.get("/newGame", (req, res) => {
 });
   
 router.post("/getBoard", (req, res) => {
-    res.send({ "GameBoard": serverSideGame.board });
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus
+        }
+    });
 });
 
 router.post("/makeMove/:move", (req, res) => {

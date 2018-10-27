@@ -14,14 +14,17 @@ describe("GET /newGame", () => {
     });
 });
 
-
 // Make a single move
 describe("POST /makeMove/5", () => {
     it("should be able to make a move", async () => {
         await request(app).get("/newGame");
-        await request(app).post("/makeMove/5")
-        const res = await request(app).post("/getBoard")
-        expect(res.body).toEqual({ "GameBoard": [1, 2, 3, 4, "X", 6, 7, 8, 9]});
+        await request(app).post("/makeMove/5");
+        const res = await request(app).post("/getBoard");
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": [1, 2, 3, 4, "X", 6, 7, 8, 9],
+                                        "GameStatus": 0
+                                        }
+                                    });
     });
 });
 
@@ -33,7 +36,11 @@ describe("POST /makeMove/5, /makeMove/7, /makeMove/9", () => {
         await request(app).post("/makeMove/7")
         await request(app).post("/makeMove/9")
         const res = await request(app).post("/getBoard")
-        expect(res.body).toEqual({ "GameBoard": [1, 2, 3, 4, "X", 6, "O", 8, "X"]});
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": [1, 2, 3, 4, "X", 6, "O", 8, "X"],
+                                        "GameStatus": 0
+                                    }
+                                });
     });
 });
 
