@@ -40,7 +40,11 @@ router.get("/makeMove/:move", (req, res) => {
     serverSideGame.makeMove(req.params.move);
     res.send({ "TicTacToe": {
         "GameBoard": serverSideGame.board,
-        "GameStatus": serverSideGame.winStatus
+        "GameStatus": serverSideGame.winStatus,
+        "XWins": serverSideGame.xWins,
+        "OWins": serverSideGame.oWins,
+        "Draws": serverSideGame.draws,
+        "Turn": serverSideGame.playerTurn
         }
     });
 });
