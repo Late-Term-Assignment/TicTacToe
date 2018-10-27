@@ -18,8 +18,7 @@ describe("GET /newGame", () => {
 describe("POST /makeMove/5", () => {
     it("should be able to make a move", async () => {
         await request(app).get("/newGame");
-        await request(app).post("/makeMove/5");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).post("/makeMove/5");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": [1, 2, 3, 4, "X", 6, 7, 8, 9],
                                         "GameStatus": 0
@@ -34,8 +33,7 @@ describe("POST /makeMove/{5, 7, 9}", () => {
         await request(app).get("/newGame");
         await request(app).post("/makeMove/5");
         await request(app).post("/makeMove/7");
-        await request(app).post("/makeMove/9");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).post("/makeMove/9");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": [1, 2, 3, 4, "X", 6, "O", 8, "X"],
                                         "GameStatus": 0
@@ -52,8 +50,7 @@ describe("POST /makeMove/{1, 2, 4, 5, 7}", () => {
         await request(app).post("/makeMove/2");
         await request(app).post("/makeMove/4");
         await request(app).post("/makeMove/5");
-        await request(app).post("/makeMove/7");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).post("/makeMove/7");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": ["X", "O", 3, "X", "O", 6, "X", 8, 9],
                                         "GameStatus": 1
@@ -71,8 +68,7 @@ describe("POST /makeMove/{5, 1, 4, 2, 7, 3}", () => {
         await request(app).post("/makeMove/4");
         await request(app).post("/makeMove/2");
         await request(app).post("/makeMove/7");
-        await request(app).post("/makeMove/3");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).post("/makeMove/3");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": ["O", "O", "O", "X", "X", 6, "X", 8, 9],
                                         "GameStatus": 2
@@ -93,8 +89,7 @@ describe("POST /makeMove/{1, 5, 2, 3, 7, 4, 6, 9, 8}", () => {
         await request(app).post("/makeMove/4");
         await request(app).post("/makeMove/6");
         await request(app).post("/makeMove/9");
-        await request(app).post("/makeMove/8");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).post("/makeMove/8");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": ["X", "X", "O", "O", "O", "X", "X", "X", "O"],
                                         "GameStatus": 3
@@ -109,8 +104,7 @@ describe("POST /makeMove/{1, 1, 2}", () => {
         await request(app).get("/newGame");
         await request(app).post("/makeMove/1");
         await request(app).post("/makeMove/1");
-        await request(app).post("/makeMove/2");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).post("/makeMove/2");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": ["X", "O", 3, 4, 5, 6, 7, 8, 9],
                                         "GameStatus": 0

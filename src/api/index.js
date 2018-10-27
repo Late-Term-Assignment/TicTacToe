@@ -30,7 +30,11 @@ router.post("/getBoard", (req, res) => {
 
 router.post("/makeMove/:move", (req, res) => {
     serverSideGame.makeMove(req.params.move);
-    res.status(200).send('Ok');
+    res.send({ "TicTacToe": {
+        "GameBoard": serverSideGame.board,
+        "GameStatus": serverSideGame.winStatus
+        }
+    });
 });
 
 router.post("/resetGame", (req, res) => {
