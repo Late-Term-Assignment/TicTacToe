@@ -121,7 +121,7 @@ describe("GET /resetGame", () => {
         await request(app).post("/makeMove/1");
         await request(app).post("/makeMove/2");
         await request(app).post("/resetGame");
-        const res = await request(app).post("/getBoard");
+        const res = await request(app).get("/getBoard");
         expect(res.body).toEqual({ "TicTacToe": {
                                         "GameBoard": [1, 2, 3, 4, 5, 6, 7, 8, 9],
                                         "GameStatus": 0

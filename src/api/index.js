@@ -20,7 +20,7 @@ router.get("/newGame", (req, res) => {
                         });
 });
   
-router.post("/getBoard", (req, res) => {
+router.get("/getBoard", (req, res) => {
     res.send({ "TicTacToe": {
         "GameBoard": serverSideGame.board,
         "GameStatus": serverSideGame.winStatus
