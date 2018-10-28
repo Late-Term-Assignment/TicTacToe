@@ -17,7 +17,7 @@ function newGame(){
 //starts a new game and resets score
 function reset(){
     fetchGet("/resetGame");
-    newGame();
+    initialize();
 }
 //makes a move for the player and removes the event listener from the field
 function makeMove(){
