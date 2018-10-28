@@ -5,16 +5,14 @@
   "private": true,
   "scripts": {
     "test": "jest --verbose --coverage",
+    "build": "webpack --open --config webpack.dev.js",
     "build-test": "npm run build && npm run test",
-    "watch": "jest --coverage --watchAll",
-    "build": "webpack --open --config webpack.prod.js",
-    "heroku-postbuild": "webpack -p --config webpack.prod.js",
+    "heroku-postbuild": "webpack -p --config webpack.dev.js",
     "start": "node app.js",
     "dev-client": "webpack-dev-server --config webpack.dev.js && npm run start",
     "dev-server": "nodemon ./app.js localhost:3000",
-    "createDocs": "node markdown-pdf.js",
-    "serverTest": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "watch-dev": "webpack --watch --config webpack.dev.js"
+    "create-docs": "node markdown-pdf.js",
+    "server-test": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
     "Tic-Tac-Toe"
