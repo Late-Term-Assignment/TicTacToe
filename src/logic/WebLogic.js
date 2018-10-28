@@ -1,5 +1,5 @@
 // webLogic.js
-initialize();
+newGame();
 //add all eventlisteners
 function initialize(){
     for(var i = 1; i <= 9; i++){
@@ -40,6 +40,7 @@ function fetchGet(toFetch){
             if(data.TicTacToe.GameStatus != 0){
                 endGame(data);
             }
+            updateScore(data);
         });
       }
     )
@@ -47,6 +48,7 @@ function fetchGet(toFetch){
       console.log('Fetch Error:', err);
     });
 }
+//updates the playing field with the values that the API currently has
 function updateBoard(board){
     document.getElementById("message").innerHTML = board.TicTacToe.Turn + "'s turn";
     //inserts the fields from the array in board
@@ -58,8 +60,8 @@ function updateBoard(board){
             document.getElementById(i.toString()).innerHTML = null;
         }
     }
-    
 }
+//ends the game, removing all event listeners and displaying the result of the game
 function endGame(board){
     var message;
     for(var i = 1; i <= 9; i++){
@@ -75,8 +77,10 @@ function endGame(board){
         message = "Draw";
     }
     document.getElementById("message").innerHTML = message;
+}
+//updates the score, does this after every move, otherwise the actual score is inaccurate
+function updateScore(board){
     document.getElementById("score1").innerHTML = board.TicTacToe.XWins;
     document.getElementById("score2").innerHTML = board.TicTacToe.OWins;
     document.getElementById("draws").innerHTML = board.TicTacToe.Draws;
-
 }
