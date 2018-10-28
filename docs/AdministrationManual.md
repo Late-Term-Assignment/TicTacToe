@@ -4,7 +4,7 @@ These instructions will get you a copy of the project deployed on a live server.
 
 ## Prerequisites
 
-The backend depends on NodeJS (v8.12.0). 
+The back-end depends on NodeJS (v8.12.0). 
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Source control
 
