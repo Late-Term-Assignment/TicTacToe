@@ -74,17 +74,10 @@ describe("Puppeteer testing for game", () => {
         expect(square).toBe("O");
     });
 
-<<<<<<< HEAD
     test("Player X wins the game, vertical, and check if the correct text on the site is displayed", async () => {
         jest.setTimeout(15000);
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
         // Tests that X wins, vertically, by selecting the correct squares correctly
-=======
-    test("Player X wins the game and check if the correct text on the site is displayed", async () => {
-        jest.setTimeout(12000);
-        await page.goto('https://fast-tor-43758.herokuapp.com/')
-        // Tests that X wins by selecting the correct squares correctly
->>>>>>> 9fff1b00f4162e404ed16e7922cc09d3c768baaf
         await page.waitForSelector("#reset")
         await page.click("#reset")
         await page.waitForSelector("#s1")
