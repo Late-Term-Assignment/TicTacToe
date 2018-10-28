@@ -2,11 +2,13 @@
 const ticTacToe = require('./ticTacToe');
 var tester = new ticTacToe();
 
+// All the tests make sure that the logic is functioning as excepcted
+// All cases are tested to pas the Code Coverage
 test("should return the board array", () => {  
   expect(tester.board).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 });
 
-test("should return the board array with first movebor", () => {
+test("should return the board array with first move", () => {
   tester.makeMove(5);
   expect(tester.board).toEqual([1, 2, 3, 4, "X", 6, 7, 8, 9]);
 });
@@ -132,8 +134,6 @@ test("O should win vertically", () => {
   expect(tester.oWins).toBe(1);
 });
 
-
-
 test("O should win, diagonally", () => {
   tester.newSession();
   tester.makeMove(4);
@@ -148,6 +148,5 @@ test("O should win, diagonally", () => {
 test("O will will try to place his O into X's place on the board", () => {
   tester.newSession();
   tester.makeMove(1);
-
   expect(tester.validateInput(1)).toBe(false);
 });

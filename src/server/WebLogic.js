@@ -1,5 +1,7 @@
 // webLogic.js
+//start the game
 newGame();
+
 //add all eventlisteners
 function initialize(){
     for(var i = 1; i <= 9; i++){

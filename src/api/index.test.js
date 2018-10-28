@@ -3,7 +3,7 @@ const app = require("../app");
 
 // Get new game board
 describe("GET /newGame", () => {
-    it("should return the game board in its initial state", async () => {
+    it("Should return the game board in its initial state", async () => {
         const res = await request(app).get("/newGame");
         expect(res.status).toBe(200);
         expect(res.body).toEqual({ "TicTacToe": {
@@ -20,7 +20,7 @@ describe("GET /newGame", () => {
 
 // Make a single move
 describe("GET /makeMove/5", () => {
-    it("should be able to make a move", async () => {
+    it("Should be able to make a move", async () => {
         await request(app).get("/resetGame");
         const res = await request(app).get("/makeMove/5");
         expect(res.body).toEqual({ "TicTacToe": {
@@ -37,7 +37,7 @@ describe("GET /makeMove/5", () => {
 
 // Make multiple moves
 describe("GET /makeMove/{5, 7, 9}", () => {
-    it("should make multiple moves", async () => {
+    it("Should make multiple moves", async () => {
         await request(app).get("/resetGame");
         await request(app).get("/makeMove/5");
         await request(app).get("/makeMove/7");
@@ -99,7 +99,7 @@ describe("GET /makeMove/{5, 1, 4, 2, 7, 3}", () => {
 
 // check if there is a tie
 describe("GET /makeMove/{1, 5, 2, 3, 7, 4, 6, 9, 8}", () => {
-    it("should end in a draw", async () => {
+    it("Should end in a draw", async () => {
         await request(app).get("/resetGame");
         await request(app).get("/makeMove/1");
         await request(app).get("/makeMove/5");
@@ -124,7 +124,7 @@ describe("GET /makeMove/{1, 5, 2, 3, 7, 4, 6, 9, 8}", () => {
 
 // Check what happens when trying to insert onto a n already occupied slot
 describe("GET /makeMove/{1, 1, 2}", () => {
-    it("should place X in the first spot and O in the second", async () => {
+    it("Should place X in the first spot and O in the second", async () => {
         await request(app).get("/resetGame");
         await request(app).get("/makeMove/1");
         await request(app).get("/makeMove/1");
@@ -143,7 +143,7 @@ describe("GET /makeMove/{1, 1, 2}", () => {
 
 // Create a new session and check if it is empty
 describe("POST /resetGame", () => {
-    it("should play with the game board then create a new session", async () => {
+    it("Should play with the game board then create a new session", async () => {
         await request(app).get("/newGame");
         await request(app).get("/makeMove/1");
         await request(app).get("/makeMove/1");
@@ -157,6 +157,28 @@ describe("POST /resetGame", () => {
                                         "OWins": 0,
                                         "Draws": 0,
                                         "Turn": "X"
+                                    }
+                                });
+    });
+});
+
+// X wins the game, no more moves can be made
+describe("GET /makeMove/{1, 2, 4, 5, 7, 9}", () => {
+    it("X should win the game", async () => {
+        await request(app).get("/resetGame");
+        await request(app).get("/makeMove/1");
+        await request(app).get("/makeMove/2");
+        await request(app).get("/makeMove/4");
+        await request(app).get("/makeMove/5");
+        await request(app).get("/makeMove/7");
+        const res = await request(app).get("/makeMove/9");
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": ["X", "O", 3, "X", "O", 6, "X", 8, 9],
+                                        "GameStatus": 1,
+                                        "XWins": 1,
+                                        "OWins": 0,
+                                        "Draws": 0,
+                                        "Turn": "O"
                                     }
                                 });
     });
