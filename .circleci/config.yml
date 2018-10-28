@@ -43,13 +43,6 @@ notify:
   webhooks:
     - url: https://coveralls.io/webhook?repo_token=RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
 
-
-version: 2
-jobs:
-  build:
-    .
-    .
-    .
   deploy:
     docker:
       - image: buildpack-deps:trusty
