@@ -1,5 +1,5 @@
 // index.js
 import css from './styles.css';
-import script from '../logic/WebLogic';
+import script from '../server/WebLogic';
 const _ = require("lodash");
 
