@@ -19,7 +19,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: circleci/node:latest-browsers
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -49,11 +49,11 @@ jobs:
 
       - run:
           name: Running code coverage to coveralls.io
-          command: 'npm run serverTest'
+          command: 'npm run server-test'
       
       - run:
           name: Creating PDF artifact
-          command: 'npm run createDocs'
+          command: 'npm run create-docs'
       - store_artifacts:
           path: docs/pdf/ 
 
