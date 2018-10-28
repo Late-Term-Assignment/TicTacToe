@@ -2,7 +2,7 @@
 initialize();
 function initialize(){
     for(var i = 1; i <= 9; i++){
-        document.getElementById(i.toString()).addEventListener("click", makeMove);
+        document.getElementById("s" + i.toString()).addEventListener("click", makeMove);
     }
     document.getElementById("new-game").addEventListener("click", newGame);
     document.getElementById("reset").addEventListener("click", reset);
@@ -47,16 +47,16 @@ function updateBoard(board){
     document.getElementById("message").innerHTML = board.TicTacToe.Turn + "'s turn";
     for(var i = 1; i <= 9; i++){
         if(board.TicTacToe.GameBoard[i - 1] == "X" || board.TicTacToe.GameBoard[i - 1] == "O" ){
-            document.getElementById(i.toString()).innerHTML = board.TicTacToe.GameBoard[i - 1];
+            document.getElementById("s" + i.toString()).innerHTML = board.TicTacToe.GameBoard[i - 1];
         }
         else {
-            document.getElementById(i.toString()).innerHTML = null;
+            document.getElementById("s" + i.toString()).innerHTML = null;
         }
     }
     if(board.TicTacToe.GameStatus != 0){
         for(var i = 1; i <= 9; i++)
         {
-            document.getElementById(i.toString()).removeEventListener("click", makeMove);
+            document.getElementById("s" + i.toString()).removeEventListener("click", makeMove);
         }
         document.getElementById("message").innerHTML = "Game Over";
 
