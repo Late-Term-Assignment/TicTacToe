@@ -27,19 +27,18 @@ jobs:
 
       - run: yarn install
 
-      - run:
-          name: Creating PDF artifact
-          command: 'node markdown-pdf.js'
-
-      - store_artifacts:
-          path: /docs 
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       - run: yarn test
+      
+      - run:
+          name: Creating PDF artifact
+          command: 'node markdown-pdf.js'
+      - store_artifacts:
+          path: /docs 
 test:
   override:
   - bundle exec rake circleci:
