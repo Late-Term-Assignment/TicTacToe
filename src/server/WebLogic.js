@@ -1,5 +1,4 @@
 // webLogic.js
-
 //start the game
 newGame();
 

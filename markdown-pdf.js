@@ -1,7 +1,7 @@
 var markdownpdf = require("markdown-pdf")
-  , fs = require("fs")
+  , fs = require("fs");
  
-
+//Creates the PDF files from the .md files in the repo.
 markdownpdf().from("./docs/AdministrationManual.md").to("./docs/pdf/AdministrationManual.pdf", function () {
 });
 
