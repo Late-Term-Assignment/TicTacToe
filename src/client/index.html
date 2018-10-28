@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script type="text/javascript" src="../../jquery-3.3.1.min.js"></script>
+=======
+>>>>>>> e274972b60a4dcab029e2afcf29090e47b7b7161
   <meta charset="UTF-8">
   <title>Tic-Tac-Toe</title>
 </head>
 <body>
   <h1>Tic-Tac-Toe</h1>
 
+ 
   <div id="nav">
-    <button id="new-game">New game</button>
+    <button id="new-game" class="navButton">New game</button>
     <span id="message">Good luck!</span>
-    <button id="reset">Reset</button>
+    <button id="reset" class="navButton">Reset</button>
   </div>
 
   <div id="board">
     <table>
       <tr class="borderBottom">
-        <td id="1" class="square"></td>
-        <td id="2" class="square vert-mid"></td>
-        <td id="3" class="square"></td>
+        <td class="square">
+            <button id="s1" class="squareButton"></button>
+        </td>
+        <td class="square vert-mid">
+            <button id="s2" class="squareButton"></button>
+        </td>
+        <td class="square">
+            <button id="s3" class="squareButton"></button>
+        </td>
       </tr>
       <tr class="borderBottom">
-        <td id="4" class="square hor-mid"></td>
-        <td id="5" class="square hor-mid vert-mid"></td>
-        <td id="6" class="square hor-mid"></td>
+        <td class="square hor-mid">
+            <button id="s4" class="squareButton"></button>
+        </td>
+        <td class="square hor-mid vert-mid">
+            <button id="s5" class="squareButton"></button>
+        </td>
+        <td class="square hor-mid">
+            <button id="s6" class="squareButton"></button>
+        </td>
       </tr>
       <tr>
-        <td id="7" class="square"></td>
-        <td id="8" class="square vert-mid"></td>
-        <td id="9" class="square"></td>
+        <td class="square">
+            <button id="s7" class="squareButton"></button>
+        </td>
+        <td class="square vert-mid">
+            <button id="s8" class="squareButton"></button>
+        </td>
+        <td class="square">
+            <button id="s9" class="squareButton"></button>
+        </td>
       </tr>
     </table>
   </div>
