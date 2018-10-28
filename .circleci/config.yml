@@ -55,12 +55,6 @@ jobs:
       - store_artifacts:
           path: docs/pdf/
 
-  deploy:
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - checkout
-      - run: npm install
       - run:
           name: Deploy dev to Heroku
           command: |
