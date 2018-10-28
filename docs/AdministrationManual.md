@@ -33,7 +33,9 @@ Use the following command to run the tests. A console table representing the cod
 
 If all the tests are completed sucessfully you tag the the project with a version number and then push to master with the following commands.
 * `git tag [version number]`
-* `git push origin master`
+* `git push origin dev`
 
-After the project has been pushed to master it can be deployed to heroku with the following command.
-* `git push -f https://heroku.com/: d55ab12a-96bb-4368-9cc8-ab76320f035c@git.heroku.com/tictactoe1inarow.git HEAD:master`
+Then create a pull request to the master branch.
+
+After the project has been pulled to master it can be deployed to heroku with the following command.
+* `git push -f https://heroku.com:d55ab12a-96bb-4368-9cc8-ab76320f035c@git.heroku.com/tictactoe1inarow.git HEAD:master`
