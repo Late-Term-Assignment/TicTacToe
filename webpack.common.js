@@ -39,9 +39,9 @@ module.exports = {
           }
         ]
       },
-    node: {
-      fs: 'empty',
-      net: 'empty'
-    },
+    // node: {
+    //   fs: 'empty',
+    //   net: 'empty'
+    // },
     target: 'web'
 };
