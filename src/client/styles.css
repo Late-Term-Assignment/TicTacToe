@@ -38,8 +38,11 @@ button {
 }
 
 button:hover {
-  color: white;
   background-color: rgb(70,70,70);
+}
+
+button.navButton:hover {
+  color: white;
 }
 
 #board {
