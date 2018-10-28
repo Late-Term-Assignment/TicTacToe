@@ -5,14 +5,9 @@
   "private": true,
   "scripts": {
     "test": "jest --verbose --coverage",
-<<<<<<< HEAD
     "build-test": "npm run build && npm run test",
     "watch": "jest --coverage --watchAll",
     "build": "webpack --open --config webpack.prod.js",
-=======
-    "watch": "jest --watchAll",
-    "build": "webpack --config webpack.common.js",
->>>>>>> 7801635116e2b45dd40be297ad5752dfe6be6ddf
     "heroku-postbuild": "webpack -p --config webpack.prod.js",
     "start": "node app.js",
     "dev-server": "webpack-dev-server --open --config webpack.dev.js",
