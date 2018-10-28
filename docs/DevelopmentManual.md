@@ -26,9 +26,9 @@ If you are considering contributing to the project we recommend branching out fr
 
 ## Running the tests
 Unit testing, integration testing and end-to-end testing have all been implemented.  
-**Unit testing** was implemented using *Jest* and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js).  
-**Integration testing** was implemented with *Supertest* and the tests can be found in [ticTacToe.test.js](../src/api/index.test.js).  
-**End-to-end testing** was implemented with *Puppeteer* and the tests can be found in [puppeteer.test.js](../E2ETesting/puppeteer.test.js).  
+* **Unit testing** was implemented using *Jest* and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js).  
+* **Integration testing** was implemented with *Supertest* and the tests can be found in [ticTacToe.test.js](../src/api/index.test.js).  
+* **End-to-end testing** was implemented with *Puppeteer* and the tests can be found in [puppeteer.test.js](../E2ETesting/puppeteer.test.js).  
 Use the following command to run the tests. A console table representing the codecoverage will follow the tests.
 * `npm test`
 
