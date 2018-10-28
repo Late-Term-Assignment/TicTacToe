@@ -10,7 +10,7 @@
     "heroku-postbuild": "webpack -p --config webpack.prod.js",
     "start": "node app.js",
     "dev-server": "webpack-dev-server --open --config webpack.dev.js",
-    "serverTest": "jest --config config.json && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "serverTest": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "watch-dev": "webpack --watch --config webpack.dev.js"
   },
   "keywords": [
