@@ -14,7 +14,7 @@ The backend depends on NodeJS (v8.12.0).
 
 The first step is to install Node v8.12.0. Follow the link provided above and choose the currect version for your OS.
 
-Next you need to clone the repo. Open a terminal and cd into the appropriate directory and enter the following command:
+Next you need to clone the repo. Open a terminal and manouver into the appropriate directory and enter the following command:
 * `git clone https://github.com/Late-Term-Assignment/TicTacToe.git`
 
 When the repo is up and running you need to install node dependencies
@@ -24,31 +24,25 @@ If you are considering contributing to the project we recommend branching out fr
 * `git checkout dev`
 * `git checkout -b [Branch name]`
 
+## Running the tests
+Before building and deploying you must run the tests to see if the project is working. Unit testing, integration testing and end-to-end testing have all been implemented.  
+* **Unit testing** was implemented using *Jest* and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js).  
+* **Integration testing** was implemented with *Supertest* and the tests can be found in [ticTacToe.test.js](../src/api/index.test.js).  
+* **End-to-end testing** was implemented with *Puppeteer* and the tests can be found in [puppeteer.test.js](../src/E2ETesting/puppeteer.test.js).
+
+Use the following command to run the tests. A console table representing the codecoverage will follow the tests.
+* `npm test`
+
 ## Build
 
-The development serer rebuilds itself and reloads when changes are made to it. If you want to manuall build it, run the following command
+The development server rebuilds itself and reloads when changes are made to it. If you want to manually build it, run the following command
 * `npm run build`
 
 ## Development client
-To deploy the development client use the following command.
+To deploy the development client, use the following command.
 * `npm run dev-client`
-
 
 ## Development server
 
-To deploy the development server input the following command.
+To deploy the development server, input the following command.
 * `npm run dev-server`
-
-## Running unit tests
-
-Unit testing is implemented using jest and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js). 
-Use the following command to run the unit tests.
-* `npm test`
-
-## Running end-to-end tests
-End-to-end testing is implemented using Puppeteer and the tests can be found in [puppeteer.js](../e2e/puppeteer.js).
-Use the following command to run the end-to-end tests (note that must build and deploy before testing).
-* node `../e2e/puppeteer.js`
-
-## Further help
-For further information please contact...

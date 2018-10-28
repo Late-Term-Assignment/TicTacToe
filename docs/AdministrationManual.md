@@ -20,7 +20,20 @@ Next you need to clone the repo. Open a terminal and cd into the appropriate dir
 When the repo is up and running you need to install node dependencies
 * `npm install`
 
-## Deploy server
+## Running the tests
+Before building and deploying you must run the tests to see if the project is working. Unit testing, integration testing and end-to-end testing have all been implemented.  
+* **Unit testing** was implemented using *Jest* and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js).  
+* **Integration testing** was implemented with *Supertest* and the tests can be found in [ticTacToe.test.js](../src/api/index.test.js).  
+* **End-to-end testing** was implemented with *Puppeteer* and the tests can be found in [puppeteer.test.js](../src/E2ETesting/puppeteer.test.js).
 
-Now everything should be set up and you can deploy the server with
-* `npm start`
+Use the following command to run the tests. A console table representing the codecoverage will follow the tests.
+* `npm test`
+
+## Deploying to server
+
+If all the tests are completed sucessfully you tag the the project with a version number and then push to master with the following commands.
+* `git tag [version number]`
+* `git push origin master`
+
+After the project has been pushed to master it can be deployed to heroku with the following command.
+* `git push -f https://heroku.com/: d55ab12a-96bb-4368-9cc8-ab76320f035c@git.heroku.com/tictactoe1inarow.git HEAD:master`
