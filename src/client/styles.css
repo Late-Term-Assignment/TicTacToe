@@ -1,0 +1,104 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(70,70,70);
+}
+
+h1 {
+  text-align: center;
+  background-color: rgb(70,70,70);
+  margin: 0px;
+  padding: 20px;
+  color: white;
+  font-size: 300%;
+  font-family: fantasy;
+}
+
+#nav {
+  background-color: white;
+  height: 30px;
+  text-align: center;
+  font-size: 120%;
+  border-bottom: 1px solid rgb(70,70,70);
+}
+
+#message {
+  display: inline-block;
+  width: 20%;
+}
+
+button {
+  border: none;
+  outline: none;
+  height: 100%;
+  transition: all 0.2s;
+  font-weight: 700;
+  font-size: inherit;
+}
+
+button.navButton {
+  background-color: white;
+  color: rgb(70,70,70);
+}
+
+button.navButton:hover {
+  color: white;
+  background-color: rgb(70,70,70);
+}
+
+#board {
+  background-color: white;
+  padding: 40px 0px;
+}
+
+table {
+  max-width: 350px;
+  width: 50%;
+  margin: 0px auto;
+  border-collapse: collapse;
+}
+
+.square {
+  padding: 0px;
+  width: 32%;
+  height: 100px;
+  text-align: center;
+  font-size: 300%;
+  transition: all 0.2s;
+}
+
+.square:hover {
+  background-color: rgba(70, 70, 70, 0.1);
+}
+
+button.squareButton {
+    display: inline-block;
+    padding: 0px;
+    width: 100%;
+    background-color: transparent;
+}
+
+#footer {
+  color: white;
+  background-color: rgb(70,70,70);
+  height: 30px;
+  text-align: center;
+  font-size: 120%;
+  padding: 10px;
+  margin: 0px;
+  font-weight: 700;
+}
+
+.footer-text {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.vert-mid{
+  border-left : 2px solid rgb(70,70,70);
+  border-right : 2px solid rgb(70,70,70);
+}
+.hor-mid{
+  border-top: 2px solid rgb(70,70,70);
+  border-bottom: 2px solid rgb(70,70,70);
+}
