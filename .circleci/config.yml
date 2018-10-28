@@ -45,6 +45,17 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       - run: yarn test
+
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy dev to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            
 test:
   override:
   - bundle exec rake circleci:
@@ -54,14 +65,3 @@ test:
 notify:
   webhooks:
     - url: https://coveralls.io/webhook?repo_token=RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
-
-
-deploy:
-  docker:
-    - image: buildpack-deps:trusty
-  steps:
-    - checkout
-    - run:
-        name: Deploy dev to Heroku
-        command: |
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
