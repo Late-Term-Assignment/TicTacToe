@@ -34,15 +34,18 @@ Use the following command to run the tests. A console table representing the cod
 * `npm test`
 
 ## Build
-
 The development server rebuilds itself and reloads when changes are made to it. If you want to manually build it, run the following command
 * `npm run build`
 
-## Development client
+## Development server
+To be able to run the deployment server you need to run both of these commands.
+### Development client
 To deploy the development client, use the following command.
 * `npm run dev-client`
 
-## Development server
-
+### Development server
 To deploy the development server, input the following command.
 * `npm run dev-server`
+
+## Interaction
+After running any of the deployments above, open a browser and go to http://localhost:3000/ to interact
