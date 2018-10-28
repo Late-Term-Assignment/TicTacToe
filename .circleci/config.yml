@@ -36,7 +36,7 @@ jobs:
       
       - run:
           name: Creating PDF artifact
-          command: 'node markdown-pdf.js'
+          command: 'npm run createDocs'
       - store_artifacts:
           path: /docs 
 test:
