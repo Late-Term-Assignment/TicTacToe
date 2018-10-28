@@ -43,7 +43,7 @@ notify:
   webhooks:
     - url: https://coveralls.io/webhook?repo_token=RZVVZMAJchArrFkoCN7tPxuu1OSJCf0Gv
 
-7
+
 version: 2
 jobs:
   build:
@@ -68,4 +68,4 @@ workflows:
           requires:
             - build
           filters:
-            branches:
+            branches: ImplementingAutoDeploy
