@@ -12,7 +12,6 @@ describe("X input Pupp Test", () => {
         });
     });
 
-
     test("Player X can input in top left square", async () => {
         jest.setTimeout(12000);
 
@@ -24,6 +23,7 @@ describe("X input Pupp Test", () => {
         var tmp = await page.$eval("#s1", e => e.textContent);
         expect(tmp).toBe("X");
     });
+
     test("Player O can input in top left square", async () => {
         jest.setTimeout(12000);
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
@@ -53,6 +53,26 @@ describe("X input Pupp Test", () => {
         await page.click("#s7")
         var tmp = await page.$eval("#message", e => e.textContent);
         expect(tmp).toBe("X wins");
+    });
+
+    test("Player O wins the game and check if the correct text is displayed", async () => {
+        jest.setTimeout(12000);
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        // Tests that X wins by selecting the correct squares correctly
+        await page.waitForSelector("#s1")
+        await page.click("#s1")
+        await page.waitForSelector("#s2")
+        await page.click("#s2")
+        await page.waitForSelector("#s4")
+        await page.click("#s4")
+        await page.waitForSelector("#s5")
+        await page.click("#s5")
+        await page.waitForSelector("#s6")
+        await page.click("#s6")
+        await page.waitForSelector("#s8")
+        await page.click("#s8")
+        var tmp = await page.$eval("#message", e => e.textContent);
+        expect(tmp).toBe("O wins");
     });
     afterAll(() => {
         browser.close();
