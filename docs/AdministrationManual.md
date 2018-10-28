@@ -36,4 +36,4 @@ If all the tests are completed sucessfully you tag the the project with a versio
 * `git push origin master`
 
 After the project has been pushed to master it can be deployed to heroku with the following command.
-* `git push -f https://heroku.com/: d55ab12a-96bb-4368-9cc8-ab76320f035c@git.heroku.com/tictactoe1inarow.git HEAD:master`
+* `git push -f https://heroku.com:d55ab12a-96bb-4368-9cc8-ab76320f035c@git.heroku.com/tictactoe1inarow.git HEAD:master`
