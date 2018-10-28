@@ -5,14 +5,15 @@
   "private": true,
   "scripts": {
     "test": "jest --verbose --coverage",
-    "watch": "jest --watchAll",
-    "build": "webpack --config webpack.common.js",
+    "build-test": "npm run build && npm run test",
+    "watch": "jest --coverage --watchAll",
+    "build": "webpack --open --config webpack.prod.js",
     "heroku-postbuild": "webpack -p --config webpack.prod.js",
     "start": "node app.js",
     "dev-server": "webpack-dev-server --open --config webpack.dev.js",
-    "serverTest": "jest --config config.json && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "watch-dev": "webpack --watch --config webpack.dev.js",
-    "createDocs": "node markdown-pdf.js"
+    "createDocs": "node markdown-pdf.js",
+    "serverTest": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "watch-dev": "webpack --watch --config webpack.dev.js"
   },
   "keywords": [
     "Tic-Tac-Toe"
