@@ -48,11 +48,11 @@ jobs:
 
       - run:
           name: Running code coverage to coveralls.io
-          command: 'npm run serverTest'
+          command: 'npm run server-test'
       
       - run:
           name: Creating PDF artifact
-          command: 'npm run createDocs'
+          command: 'npm run create-docs'
       - store_artifacts:
           path: docs/pdf/ 
 
