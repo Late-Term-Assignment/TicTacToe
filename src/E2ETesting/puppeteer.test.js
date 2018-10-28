@@ -13,6 +13,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Everything is set to its initial status", async () => {
+        jest.setTimeout(12000);
 
         await page.goto('https://fast-tor-43758.herokuapp.com/')
 
@@ -29,6 +30,7 @@ describe("Puppeteer testing for game", () => {
 
 
     test("The message displayed at the top is X's turn!", async () => {
+        jest.setTimeout(12000);
 
         await page.goto('https://fast-tor-43758.herokuapp.com/')
 
@@ -38,6 +40,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("The message displayed at the top is O's turn!", async () => {
+        jest.setTimeout(3000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         await page.waitForSelector("#s1")
         await page.click("#s1")
@@ -72,6 +75,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Player X wins the game, vertical, and check if the correct text on the site is displayed", async () => {
+        jest.setTimeout(15000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Tests that X wins, vertically, by selecting the correct squares correctly
         await page.waitForSelector("#reset")
@@ -97,6 +101,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Repeated X win test, but new game initialized and score stored and unchanged", async () => {
+        jest.setTimeout(15000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Tests that X wins, new game selected and score stored and checked for accuracy.
         await page.waitForSelector("#reset")
@@ -125,6 +130,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Player O wins the game, vertical, and check if the correct text is displayed", async () => {
+        jest.setTimeout(12000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Test that O wins, vertically, and if the score updates correctly
         await page.waitForSelector("#reset")
@@ -152,6 +158,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Player X wins the game, diagonally, and check if the correct text is displayed", async () => {
+        jest.setTimeout(12000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Test that X wins, diagonally, and if the score updates correctly
         await page.waitForSelector("#reset")
@@ -178,6 +185,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Player O wins the game, horizontally, and check if the correct text is displayed", async () => {
+        jest.setTimeout(12000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Test that O wins, horizontally, and if the score updates correctly
         await page.waitForSelector("#reset")
@@ -205,6 +213,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Draw and check if the correct text is displayed", async () => {
+        jest.setTimeout(12000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Test draw, diagonally, and if the score updates correctly
         await page.click("#reset")
@@ -228,6 +237,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Illegal input test, O tries to fill in square 1 which is already occupied", async () => {
+        jest.setTimeout(12000);
         await page.goto('https://fast-tor-43758.herokuapp.com/')
         // X starts by occupying square #1, then it's O's turn and he/she tests the same square with no changes occuring.
         await page.click("#reset")

@@ -30,19 +30,22 @@ Before building and deploying you must run the tests to see if the project is wo
 * **Integration testing** was implemented with *Supertest* and the tests can be found in [ticTacToe.test.js](../src/api/index.test.js).  
 * **End-to-end testing** was implemented with *Puppeteer* and the tests can be found in [puppeteer.test.js](../src/E2ETesting/puppeteer.test.js).
 
-Use the following command to run the tests. A console table representing the codecoverage will follow the tests.
+Use the following command to run the tests. Jest provides us with a console table representing the codecoverage which follows the tests.
 * `npm test`
 
 ## Build
-
 The development server rebuilds itself and reloads when changes are made to it. If you want to manually build it, run the following command
 * `npm run build`
 
-## Development client
+## Development server
+To be able to run the deployment server you need to run both of these commands.
+### Development client
 To deploy the development client, use the following command.
 * `npm run dev-client`
 
-## Development server
-
+### Development server
 To deploy the development server, input the following command.
 * `npm run dev-server`
+
+## Connecting to dev server
+After running any of the deployments above, open a browser and go to http://localhost:3000/ to connect
