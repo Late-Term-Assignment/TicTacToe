@@ -65,7 +65,7 @@ describe("Puppeteer testing for game", () => {
     });
 
     test("Player X wins the game, vertical, and check if the correct text on the site is displayed", async () => {
-        jest.setTimeout(12000);
+        jest.setTimeout(15000);
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
         // Tests that X wins, vertically, by selecting the correct squares correctly
         await page.waitForSelector("#reset")
@@ -88,6 +88,35 @@ describe("Puppeteer testing for game", () => {
         expect(player1).toBe("1");
         expect(player2).toBe("0");
         expect(draws).toBe("0");
+    });
+
+    test("Repeated X win test, but new game initialized and score stored and unchanged", async () => {
+        jest.setTimeout(15000);
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        // Tests that X wins, new game selected and score stored and checked for accuracy.
+        await page.waitForSelector("#reset")
+        await page.click("#reset")
+        await page.waitForSelector("#s1")
+        await page.click("#s1")
+        await page.waitForSelector("#s2")
+        await page.click("#s2")
+        await page.waitForSelector("#s4")
+        await page.click("#s4")
+        await page.waitForSelector("#s5")
+        await page.click("#s5")
+        await page.waitForSelector("#s7")
+        await page.click("#s7")
+        await page.waitForSelector("#new-game")
+        await page.click("#new-game")
+        var message = await page.$eval("#message", e => e.textContent);
+        var player1 = await page.$eval("#score1", e => e.textContent);
+        var player2 = await page.$eval("#score2", e => e.textContent);
+        var draws = await page.$eval("#draws", e => e.textContent);
+        expect(message).toBe("X's turn");
+        expect(player1).toBe("1");
+        expect(player2).toBe("0");
+        expect(draws).toBe("0");
+
     });
 
     test("Player O wins the game, vertical, and check if the correct text is displayed", async () => {
