@@ -197,6 +197,26 @@ describe("Puppeteer testing for game", () => {
         expect(draws).toBe("1");
     });
 
+    test("Illegal input test, O tries to fill in square 1 which is already occupied", async () => {
+        jest.setTimeout(12000);
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        // X starts by occupying square #1, then it's O's turn and he/she tests the same square with no changes occuring.
+        await page.click("#reset")
+        await page.click("#s1")
+        await page.click("#s1")
+        var message = await page.$eval("#message", e => e.textContent);
+        var player1 = await page.$eval("#score1", e => e.textContent);
+        var player2 = await page.$eval("#score2", e => e.textContent);
+        var draws = await page.$eval("#draws", e => e.textContent);
+        var square = await page.$eval("#s1", e => e.textContent);
+
+        expect(message).toBe("O's turn");
+        expect(square).toBe("X");
+        expect(player2).toBe("0");
+        expect(draws).toBe("0");
+    });
+
+
     afterAll(() => {
         browser.close();
     });
