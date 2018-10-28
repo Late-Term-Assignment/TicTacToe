@@ -15,7 +15,7 @@ describe("X input Pupp Test", () => {
     test("Everything is set to its initial status", async () => {
         jest.setTimeout(12000);
 
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         // Checks that everything is displayed correctly when the user resets
         await page.waitForSelector("#reset")
@@ -32,7 +32,7 @@ describe("X input Pupp Test", () => {
     test("The message displayed at the top is X's luck!", async () => {
         jest.setTimeout(12000);
 
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         // Check that the message simply displays Good luck!
         var message = await page.$eval("#message", e => e.textContent);
@@ -42,7 +42,7 @@ describe("X input Pupp Test", () => {
     test("Player X can input in top left square", async () => {
         jest.setTimeout(12000);
 
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         //await for the selection, then press square 1 with player x.
         await page.waitForSelector("#s1")
@@ -53,7 +53,7 @@ describe("X input Pupp Test", () => {
 
     test("Player O can input in top left square", async () => {
         jest.setTimeout(12000);
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         // Start by clicking the upper-left corner and then click the top-middle square
         await page.waitForSelector("#s1")
@@ -66,7 +66,7 @@ describe("X input Pupp Test", () => {
 
     test("Player X wins the game and check if the correct text on the site is displayed", async () => {
         jest.setTimeout(12000);
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Tests that X wins by selecting the correct squares correctly
         await page.waitForSelector("#reset")
         await page.click("#reset")
@@ -92,7 +92,7 @@ describe("X input Pupp Test", () => {
 
     test("Player O wins the game and check if the correct text is displayed", async () => {
         jest.setTimeout(12000);
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
         // Test that O wins and if the score updates correctly
         await page.waitForSelector("#reset")
         await page.click("#reset")
