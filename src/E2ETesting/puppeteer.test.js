@@ -12,6 +12,22 @@ describe("X input Pupp Test", () => {
         });
     });
 
+    test("Everything is set to its initial status", async () => {
+        jest.setTimeout(12000);
+
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+
+        // Checks that everything is displayed correctly when the user resets
+        await page.waitForSelector("#reset")
+        await page.click("#reset")
+        var player1 = await page.$eval("#score1", e => e.textContent);
+        var player2 = await page.$eval("#score2", e => e.textContent);
+        var draws = await page.$eval("#draws", e => e.textContent);
+        expect(player1).toBe("0");
+        expect(player2).toBe("0");
+        expect(draws).toBe("0");
+    });
+
 
     test("The message displayed at the top is X's luck!", async () => {
         jest.setTimeout(12000);
