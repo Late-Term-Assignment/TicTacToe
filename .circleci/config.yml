@@ -38,7 +38,7 @@ jobs:
           name: Creating PDF artifact
           command: 'npm run createDocs'
       - store_artifacts:
-          path: /docs 
+          path: pdfDocs/ 
 test:
   override:
   - bundle exec rake circleci:
