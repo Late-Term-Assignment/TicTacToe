@@ -35,11 +35,22 @@ button {
   font-weight: 700;
   font-size: inherit;
   transition: all 0.2s;
+<<<<<<< HEAD
 }
 
 button:hover {
   color: white;
   background-color: rgb(70,70,70);
+=======
+}
+
+button:hover {
+  background-color: rgb(70,70,70);
+}
+
+button.navButton:hover {
+  color: white;
+>>>>>>> fa12c40a0d3e69f98579d184f1314fa11c0028a4
 }
 
 #board {
@@ -66,6 +77,18 @@ table {
   background-color: rgba(70, 70, 70, 0.1);
 }
 
+<<<<<<< HEAD
+=======
+button.squareButton {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+>>>>>>> fa12c40a0d3e69f98579d184f1314fa11c0028a4
 #footer {
   color: white;
   background-color: rgb(70,70,70);
