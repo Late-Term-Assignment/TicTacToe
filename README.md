@@ -32,3 +32,5 @@ Documentation about the following items is kept in the **docs** folder:
 
 [coverage-image]: https://coveralls.io/repos/github/Late-Term-Assignment/TicTacToe/badge.svg?branch=CodeCoverageSetup
 [coverage-url]: https://coveralls.io/github/Late-Term-Assignment/TicTacToe?branch=CodeCoverageSetup
+
+[![Coverage Status](https://coveralls.io/repos/github/Late-Term-Assignment/TicTacToe/badge.svg?branch=CodeCoverageSetup)](https://coveralls.io/github/Late-Term-Assignment/TicTacToe?branch=CodeCoverageSetup)
