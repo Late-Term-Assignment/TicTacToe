@@ -20,7 +20,7 @@ class ticTacToe {
   //Then it makes the move on the board
   //And calls other functions to update the game status
   makeMove(move) {
-    if (this.validateInput(move)) {
+    if (this.validateInput(move) && this.winStatus === 0) {
       this.board[move - 1] = this.playerTurn;
       this.nrOfmoves++;
       this.checkWinStatus();

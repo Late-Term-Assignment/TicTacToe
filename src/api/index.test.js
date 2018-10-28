@@ -161,3 +161,24 @@ describe("POST /resetGame", () => {
                                 });
     });
 });
+// X wins the game, no more moves can be made
+describe("GET /makeMove/{1, 2, 4, 5, 7, 9}", () => {
+    it("X should win the game", async () => {
+        await request(app).get("/resetGame");
+        await request(app).get("/makeMove/1");
+        await request(app).get("/makeMove/2");
+        await request(app).get("/makeMove/4");
+        await request(app).get("/makeMove/5");
+        await request(app).get("/makeMove/7");
+        const res = await request(app).get("/makeMove/9");
+        expect(res.body).toEqual({ "TicTacToe": {
+                                        "GameBoard": ["X", "O", 3, "X", "O", 6, "X", 8, 9],
+                                        "GameStatus": 1,
+                                        "XWins": 1,
+                                        "OWins": 0,
+                                        "Draws": 0,
+                                        "Turn": "O"
+                                    }
+                                });
+    });
+});
