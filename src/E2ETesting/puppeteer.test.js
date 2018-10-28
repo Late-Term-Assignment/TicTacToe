@@ -64,10 +64,12 @@ describe("X input Pupp Test", () => {
         expect(square).toBe("O");
     });
 
-    test("Player X wins the game and check if the correct text is displayed", async () => {
+    test("Player X wins the game and check if the correct text on the site is displayed", async () => {
         jest.setTimeout(12000);
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
         // Tests that X wins by selecting the correct squares correctly
+        await page.waitForSelector("#reset")
+        await page.click("#reset")
         await page.waitForSelector("#s1")
         await page.click("#s1")
         await page.waitForSelector("#s2")
@@ -79,13 +81,21 @@ describe("X input Pupp Test", () => {
         await page.waitForSelector("#s7")
         await page.click("#s7")
         var message = await page.$eval("#message", e => e.textContent);
+        var player1 = await page.$eval("#score1", e => e.textContent);
+        var player2 = await page.$eval("#score2", e => e.textContent);
+        var draws = await page.$eval("#draws", e => e.textContent);
         expect(message).toBe("X wins");
+        expect(player1).toBe("1");
+        expect(player2).toBe("0");
+        expect(draws).toBe("0");
     });
 
     test("Player O wins the game and check if the correct text is displayed", async () => {
         jest.setTimeout(12000);
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
-        // Tests that X wins by selecting the correct squares correctly
+        // Test that O wins and if the score updates correctly
+        await page.waitForSelector("#reset")
+        await page.click("#reset")
         await page.waitForSelector("#s1")
         await page.click("#s1")
         await page.waitForSelector("#s2")
@@ -99,7 +109,13 @@ describe("X input Pupp Test", () => {
         await page.waitForSelector("#s8")
         await page.click("#s8")
         var message = await page.$eval("#message", e => e.textContent);
+        var player1 = await page.$eval("#score1", e => e.textContent);
+        var player2 = await page.$eval("#score2", e => e.textContent);
+        var draws = await page.$eval("#draws", e => e.textContent);
         expect(message).toBe("O wins");
+        expect(player1).toBe("0");
+        expect(player2).toBe("1");
+        expect(draws).toBe("0");
     });
 
     afterAll(() => {
