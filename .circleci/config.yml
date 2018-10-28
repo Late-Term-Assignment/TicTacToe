@@ -48,7 +48,7 @@ jobs:
 
       - run:
           name: Running code coverage to coveralls.io
-          command: 'npm run serverTests'
+          command: 'npm run serverTest'
       
       - run:
           name: Creating PDF artifact
