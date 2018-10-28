@@ -150,4 +150,7 @@ $RECYCLE.BIN/
 # Dist folder
 dist
 
+# Pdf docs
+*.pdf
+
 # End of https://www.gitignore.io/api/node,linux,macos,windows
