@@ -24,6 +24,14 @@ If you are considering contributing to the project we recommend branching out fr
 * `git checkout dev`
 * `git checkout -b [Branch name]`
 
+## Running the tests
+Unit testing, integration testing and end-to-end testing have all been implemented. 
+**Unit testing** was implemented using *Jest* and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js).
+**Integration testing** was implemented with *Supertest* and the tests can be found in [ticTacToe.test.js](../src/api/index.test.js).
+**End-to-end testing** was implemented with *Puppeteer* and the tests can be found in [puppeteer.test.js](../E2ETesting/puppeteer.test.js).
+Use the following command to run the tests. A console table representing the codecoverage will follow the tests.
+* `npm test`
+
 ## Build
 
 The development server rebuilds itself and reloads when changes are made to it. If you want to manually build it, run the following command
@@ -38,17 +46,3 @@ To deploy the development client, use the following command.
 
 To deploy the development server, input the following command.
 * `npm run dev-server`
-
-## Running unit tests
-
-Unit testing is implemented using jest and the tests can be found in [ticTacToe.test.js](../src/logic/ticTacToe.test.js). 
-Use the following command to run the unit tests.
-* `npm test`
-
-## Running end-to-end tests
-End-to-end testing is implemented using Puppeteer and the tests can be found in [puppeteer.js](../e2e/puppeteer.js).
-Use the following command to run the end-to-end tests (note that must build and deploy before testing).
-* `node ../E2ETesting/puppeteer.test.js`
-
-## Further help
-For further information please contact...

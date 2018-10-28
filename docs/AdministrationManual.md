@@ -24,3 +24,7 @@ When the repo is up and running you need to install node dependencies
 
 Now everything should be set up and you can deploy the server with
 * `npm start`
+
+test are run on dev
+if all goes well, pushed on master
+from there: pushed on heroku
