@@ -8,7 +8,7 @@ workflows:
             - build
           filters:
             branches:
-              only: ImplementingAutoDeploy
+              only: dev
 
 # Javascript Node CircleCI 2.0 configuration file
 #
