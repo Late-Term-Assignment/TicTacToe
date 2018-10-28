@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
-const ticTacToe = require('../logic/ticTacToe')
+const ticTacToe = require('../logic/ticTacToe');
 const serverSideGame = new ticTacToe();
 
 // Game status indicator:
@@ -9,7 +8,6 @@ const serverSideGame = new ticTacToe();
 //      1 - X has won
 //      2 - Y has won
 //      3 - tie
-
 
 router.get("/newGame", (req, res) => {
     serverSideGame.resetBoard();
@@ -60,6 +58,6 @@ router.get("/resetGame", (req, res) => {
         "Turn": serverSideGame.playerTurn
         }
     });
-})
+});
 
 module.exports = router;

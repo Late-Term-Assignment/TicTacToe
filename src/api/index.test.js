@@ -161,6 +161,7 @@ describe("POST /resetGame", () => {
                                 });
     });
 });
+
 // X wins the game, no more moves can be made
 describe("GET /makeMove/{1, 2, 4, 5, 7, 9}", () => {
     it("X should win the game", async () => {
