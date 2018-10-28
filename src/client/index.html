@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic-Tac-Toe</title>
+</head>
+<body>
+  <h1>Tic-Tac-Toe</h1>
+
+ 
+  <div id="nav">
+    <button id="new-game" class="navButton">New game</button>
+    <span id="message">Good luck!</span>
+    <button id="reset" class="navButton">Reset</button>
+  </div>
+
+  <div id="board">
+    <table>
+      <tr class="borderBottom">
+        <td class="square">
+            <button id="s1" class="squareButton"></button>
+        </td>
+        <td class="square vert-mid">
+            <button id="s2" class="squareButton"></button>
+        </td>
+        <td class="square">
+            <button id="s3" class="squareButton"></button>
+        </td>
+      </tr>
+      <tr class="borderBottom">
+        <td class="square hor-mid">
+            <button id="s4" class="squareButton"></button>
+        </td>
+        <td class="square hor-mid vert-mid">
+            <button id="s5" class="squareButton"></button>
+        </td>
+        <td class="square hor-mid">
+            <button id="s6" class="squareButton"></button>
+        </td>
+      </tr>
+      <tr>
+        <td class="square">
+            <button id="s7" class="squareButton"></button>
+        </td>
+        <td class="square vert-mid">
+            <button id="s8" class="squareButton"></button>
+        </td>
+        <td class="square">
+            <button id="s9" class="squareButton"></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="footer">
+    <span class="footer-text">Player 1: <span id="score1">0</span></span>
+    <span class="footer-text">Player 2: <span id="score2">0</span></span>
+    <span class="footer-text">Draws:    <span id="draws">0</span></span>
+  </div>
+
+</body>
+</html>
