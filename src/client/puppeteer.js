@@ -2,25 +2,30 @@ const puppeteer = require('puppeteer');
 puppeteer.launch({headless: false}).then(async browser => {
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 800 })
-  await page.goto('https://arcane-crag-40980.herokuapp.com/?fbclid=IwAR2X0t7n5PKULXXlUqYqZ1IsrL8cRnKYnStlIeI1yOi9d4nOje94RacRfx0');  
+  await page.goto('http://localhost:3000/');  
   
   //take screenshot of an empty board
-  await page.screenshot({ path: 'emptyBoard.png', fullPage: true })
-
+  //await page.screenshot({ path: 'emptyBoard.png', fullPage: true })
 
   //start by clearing the cache, init new board and game
-  await page.waitFor(2000);
+  /*await page.waitFor(2000);
   await page.waitForSelector('#reset')
   await page.click("#reset")
   await page.waitFor(2000);
   await page.waitForSelector('#new-game')
-  await page.click("#new-game")
+  await page.click("#new-game")*/
   
-  /* Remove the comment symbols to test all the functionality.
+  await page.waitFor(5000);
+  await page.$eval( '#s1', button => {
+    button.click();
+  });
   await page.waitFor(2000);
-  await page.click("#0")
 
-  await page.screenshot({ path: 'id0InputX.png', fullPage: true });
+  
+  //await page.waitFor(2000)
+  //await page.click("#0")
+
+  /*await page.screenshot({ path: 'id0InputX.png', fullPage: true });
   page.click("#1");
   await page.waitFor(1000);
   await page.screenshot({ path: 'id1InputO.png', fullPage: true });
