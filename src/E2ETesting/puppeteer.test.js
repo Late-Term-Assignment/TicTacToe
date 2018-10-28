@@ -17,6 +17,18 @@ describe("X input Pupp Test", () => {
 
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
 
+        // Check that the message simply displays Good luck!
+        var tmp = await page.$eval("#s1", e => e.textContent);
+        expect(tmp).toBe("Good luck1");
+    });
+
+
+
+    test("Player X can input in top left square", async () => {
+        jest.setTimeout(12000);
+
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+
         //await for the selection, then press square 1 with player x.
         await page.waitForSelector("#s1")
         await page.click("#s1")
@@ -74,6 +86,7 @@ describe("X input Pupp Test", () => {
         var tmp = await page.$eval("#message", e => e.textContent);
         expect(tmp).toBe("O wins");
     });
+
     afterAll(() => {
         browser.close();
     });
