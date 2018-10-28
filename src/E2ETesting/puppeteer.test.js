@@ -29,14 +29,24 @@ describe("Puppeteer testing for game", () => {
     });
 
 
-    test("The message displayed at the top is X's luck!", async () => {
+    test("The message displayed at the top is X's turn!", async () => {
         jest.setTimeout(12000);
 
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
 
-        // Check that the message simply displays Good luck!
+        // Check that the message simply displays X's turn!
         var message = await page.$eval("#message", e => e.textContent);
         expect(message).toBe("X's turn");
+    });
+
+    test("The message displayed at the top is O's turn!", async () => {
+        jest.setTimeout(3000);
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.waitForSelector("#s1")
+        await page.click("#s1")
+        // Check that the message simply displays Good luck!
+        var message = await page.$eval("#message", e => e.textContent);
+        expect(message).toBe("O's turn");
     });
 
     test("Player X can input in top left square", async () => {
