@@ -12,17 +12,15 @@ describe("X input Pupp Test", () => {
         });
     });
 
-    test("Player X can input in top left square", async () => {
+    test("The message displayed at the top is X's luck!", async () => {
         jest.setTimeout(12000);
 
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
 
         // Check that the message simply displays Good luck!
-        var tmp = await page.$eval("#s1", e => e.textContent);
-        expect(tmp).toBe("Good luck1");
+        var tmp = await page.$eval("#message", e => e.textContent);
+        expect(tmp).toBe("X's turn");
     });
-
-
 
     test("Player X can input in top left square", async () => {
         jest.setTimeout(12000);
