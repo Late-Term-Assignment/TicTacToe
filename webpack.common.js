@@ -1,5 +1,4 @@
 const path = require('path');
-const CleanWebPackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var options =  [
@@ -22,7 +21,6 @@ module.exports = {
         publicPath: './'
     },
     plugins: [
-        //new CleanWebPackPlugin(paths, options),
         new HtmlWebpackPlugin({
             title: 'Production',
             template: './src/client/index.html'

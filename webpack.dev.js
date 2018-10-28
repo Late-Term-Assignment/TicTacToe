@@ -10,7 +10,6 @@ module.exports = merge(common, {
         port: 6060,
         open: true,
         contentBase: path.join(__dirname, 'dist'),
-        compress: true,
         watchOptions: {
             poll: true
         },
