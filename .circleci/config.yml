@@ -45,6 +45,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       - run: yarn test
+
+      - run:
+          name: Running code coverage to coveralls.io
+          command: 'npm run serverTest'
       
       - run:
           name: Creating PDF artifact
