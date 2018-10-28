@@ -17,7 +17,7 @@ class ticTacToe
   }
 
   validateInput(move){
-    if(this.board[move - 1] === "X" || this.board[move - 1] === "O"){
+    if(this.winStatus !== 0 || this.board[move - 1] === "X" || this.board[move - 1] === "O"){
       return false;
     }
     return true;
