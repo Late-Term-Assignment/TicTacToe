@@ -18,7 +18,7 @@ describe("X input Pupp Test", () => {
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
 
         // Check that the message simply displays Good luck!
-        var tmp = await page.$eval("#message", e => e.textContent);
+        var message = await page.$eval("#message", e => e.textContent);
         expect(tmp).toBe("X's turn");
     });
 
@@ -30,7 +30,7 @@ describe("X input Pupp Test", () => {
         //await for the selection, then press square 1 with player x.
         await page.waitForSelector("#s1")
         await page.click("#s1")
-        var tmp = await page.$eval("#s1", e => e.textContent);
+        var square = await page.$eval("#s1", e => e.textContent);
         expect(tmp).toBe("X");
     });
 
@@ -43,7 +43,7 @@ describe("X input Pupp Test", () => {
         await page.click("#s1")
         await page.waitForSelector("#s2")
         await page.click("#s2")
-        var tmp = await page.$eval("#s2", e => e.textContent);
+        var square = await page.$eval("#s2", e => e.textContent);
         expect(tmp).toBe("O");
     });
 
@@ -61,7 +61,7 @@ describe("X input Pupp Test", () => {
         await page.click("#s5")
         await page.waitForSelector("#s7")
         await page.click("#s7")
-        var tmp = await page.$eval("#message", e => e.textContent);
+        var message = await page.$eval("#message", e => e.textContent);
         expect(tmp).toBe("X wins");
     });
 
@@ -81,7 +81,7 @@ describe("X input Pupp Test", () => {
         await page.click("#s6")
         await page.waitForSelector("#s8")
         await page.click("#s8")
-        var tmp = await page.$eval("#message", e => e.textContent);
+        var message = await page.$eval("#message", e => e.textContent);
         expect(tmp).toBe("O wins");
     });
 
