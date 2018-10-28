@@ -11,6 +11,7 @@
     "heroku-postbuild": "webpack -p --config webpack.prod.js",
     "start": "node app.js",
     "dev-server": "webpack-dev-server --open --config webpack.dev.js",
+    "createDocs": "node markdown-pdf.js",
     "serverTest": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "watch-dev": "webpack --watch --config webpack.dev.js"
   },
@@ -29,6 +30,7 @@
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
+    "markdown-pdf": "^9.0.0",
     "node-loader": "^0.6.0",
     "style-loader": "^0.23.1",
     "supertest": "^3.3.0",

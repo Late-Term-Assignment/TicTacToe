@@ -45,6 +45,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       - run: yarn test
+      
+      - run:
+          name: Creating PDF artifact
+          command: 'npm run createDocs'
+      - store_artifacts:
+          path: docs/pdf/ 
 
   deploy:
     docker:
