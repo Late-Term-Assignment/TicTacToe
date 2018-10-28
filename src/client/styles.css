@@ -66,6 +66,15 @@ table {
   background-color: rgba(70, 70, 70, 0.1);
 }
 
+button.squareButton {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
 #footer {
   color: white;
   background-color: rgb(70,70,70);
