@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 describe("X input Pupp Test", () => {
     beforeAll(async () => {
         browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             slowMo: 80
         });
         page = await browser.newPage();
