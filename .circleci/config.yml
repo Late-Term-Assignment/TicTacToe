@@ -28,8 +28,8 @@ jobs:
       - run: yarn install
 
       - run:
-      name: Creating PDF artifact
-      command: node markdown-pdf.js
+        name: Creating PDF artifact
+        command: node markdown-pdf.js
 
       - store_artifacts:
         path: /docs 
