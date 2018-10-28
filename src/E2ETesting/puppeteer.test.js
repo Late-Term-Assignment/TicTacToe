@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-describe("X input Pupp Test", () => {
+describe("Puppeteer testing for game", () => {
     beforeAll(async () => {
         browser = await puppeteer.launch({
             headless: true,
@@ -115,6 +115,33 @@ describe("X input Pupp Test", () => {
         expect(message).toBe("O wins");
         expect(player1).toBe("0");
         expect(player2).toBe("1");
+        expect(draws).toBe("0");
+    });
+
+    test("Player X wins the game, diagonally, and check if the correct text is displayed", async () => {
+        jest.setTimeout(12000);
+        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        // Test that O wins and if the score updates correctly
+        await page.waitForSelector("#reset")
+        await page.click("#reset")
+        await page.waitForSelector("#s1")
+        await page.click("#s1")
+        await page.waitForSelector("#s2")
+        await page.click("#s2")
+        await page.waitForSelector("#s5")
+        await page.click("#s5")
+        await page.waitForSelector("#s3")
+        await page.click("#s3")
+        await page.waitForSelector("#s9")
+        await page.click("#s9")
+
+        var message = await page.$eval("#message", e => e.textContent);
+        var player1 = await page.$eval("#score1", e => e.textContent);
+        var player2 = await page.$eval("#score2", e => e.textContent);
+        var draws = await page.$eval("#draws", e => e.textContent);
+        expect(message).toBe("X wins");
+        expect(player1).toBe("1");
+        expect(player2).toBe("0");
         expect(draws).toBe("0");
     });
 
