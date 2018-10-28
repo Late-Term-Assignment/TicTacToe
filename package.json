@@ -7,7 +7,7 @@
     "test": "jest --verbose --coverage",
     "build": "webpack --open --config webpack.prod.js",
     "build-test": "npm run build && npm run test",
-    "heroku-postbuild": "webpack -p --config webpack.dev.js",
+    "heroku-postbuild": "webpack -p --config webpack.prod.js",
     "start": "node app.js",
     "dev-client": "webpack-dev-server --config webpack.dev.js && npm run start",
     "dev-server": "nodemon ./app.js localhost:3000",
