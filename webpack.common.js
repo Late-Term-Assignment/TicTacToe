@@ -22,7 +22,7 @@ module.exports = {
         publicPath: './'
     },
     plugins: [
-        new CleanWebPackPlugin(paths, options),
+        //new CleanWebPackPlugin(paths, options),
         new HtmlWebpackPlugin({
             title: 'Production',
             template: './src/client/index.html'
