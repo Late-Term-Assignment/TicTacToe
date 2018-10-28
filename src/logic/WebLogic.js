@@ -3,7 +3,7 @@ newGame();
 //add all eventlisteners
 function initialize(){
     for(var i = 1; i <= 9; i++){
-        document.getElementById(i.toString()).addEventListener("click", makeMove);
+        document.getElementById("s" + i.toString()).addEventListener("click", makeMove);
     }
     document.getElementById("new-game").addEventListener("click", newGame);
     document.getElementById("reset").addEventListener("click", reset);
@@ -21,7 +21,7 @@ function reset(){
 }
 //makes a move for the player and removes the event listener from the field
 function makeMove(){
-    fetchGet("/makeMove/" + this.id);
+    fetchGet("/makeMove/" + this.id.substr(1));
     this.removeEventListener("click", makeMove);
 }
 //get the json from the API and call the function updateBoard and calls endGame if the game has ended
@@ -54,10 +54,10 @@ function updateBoard(board){
     //inserts the fields from the array in board
     for(var i = 1; i <= 9; i++){
         if(board.TicTacToe.GameBoard[i - 1] == "X" || board.TicTacToe.GameBoard[i - 1] == "O" ){
-            document.getElementById(i.toString()).innerHTML = board.TicTacToe.GameBoard[i - 1];
+            document.getElementById("s" + i.toString()).innerHTML = board.TicTacToe.GameBoard[i - 1];
         }
         else {
-            document.getElementById(i.toString()).innerHTML = null;
+            document.getElementById("s" + i.toString()).innerHTML = null;
         }
     }
 }
@@ -65,7 +65,7 @@ function updateBoard(board){
 function endGame(board){
     var message;
     for(var i = 1; i <= 9; i++){
-        document.getElementById(i.toString()).removeEventListener("click", makeMove);
+        document.getElementById("s" + i.toString()).removeEventListener("click", makeMove);
     }
     if(board.TicTacToe.GameStatus == 1){
         message = "X wins";
