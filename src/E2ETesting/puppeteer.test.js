@@ -15,7 +15,7 @@ describe("Puppeteer testing for game", () => {
     test("Everything is set to its initial status", async () => {
         jest.setTimeout(12000);
 
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         // Checks that everything is displayed correctly when the user resets
         await page.waitForSelector("#reset")
@@ -32,7 +32,7 @@ describe("Puppeteer testing for game", () => {
     test("The message displayed at the top is X's turn!", async () => {
         jest.setTimeout(12000);
 
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         // Check that the message simply displays X's turn!
         var message = await page.$eval("#message", e => e.textContent);
@@ -52,7 +52,7 @@ describe("Puppeteer testing for game", () => {
     test("Player X can input in top left square", async () => {
         jest.setTimeout(12000);
 
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         //await for the selection, then press square 1 with player x.
         await page.waitForSelector("#s1")
@@ -63,7 +63,7 @@ describe("Puppeteer testing for game", () => {
 
     test("Player O can input in top left square", async () => {
         jest.setTimeout(12000);
-        await page.goto('https://tictactoe1inarow.herokuapp.com/')
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
 
         // Start by clicking the upper-left corner and then click the top-middle square
         await page.waitForSelector("#s1")
@@ -74,10 +74,17 @@ describe("Puppeteer testing for game", () => {
         expect(square).toBe("O");
     });
 
+<<<<<<< HEAD
     test("Player X wins the game, vertical, and check if the correct text on the site is displayed", async () => {
         jest.setTimeout(15000);
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
         // Tests that X wins, vertically, by selecting the correct squares correctly
+=======
+    test("Player X wins the game and check if the correct text on the site is displayed", async () => {
+        jest.setTimeout(12000);
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
+        // Tests that X wins by selecting the correct squares correctly
+>>>>>>> 9fff1b00f4162e404ed16e7922cc09d3c768baaf
         await page.waitForSelector("#reset")
         await page.click("#reset")
         await page.waitForSelector("#s1")
@@ -131,8 +138,13 @@ describe("Puppeteer testing for game", () => {
 
     test("Player O wins the game, vertical, and check if the correct text is displayed", async () => {
         jest.setTimeout(12000);
+<<<<<<< HEAD
         await page.goto('https://tictactoe1inarow.herokuapp.com/')
         // Test that O wins, vertically, and if the score updates correctly
+=======
+        await page.goto('https://fast-tor-43758.herokuapp.com/')
+        // Test that O wins and if the score updates correctly
+>>>>>>> 9fff1b00f4162e404ed16e7922cc09d3c768baaf
         await page.waitForSelector("#reset")
         await page.click("#reset")
         await page.waitForSelector("#s1")

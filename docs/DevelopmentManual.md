@@ -29,9 +29,14 @@ If you are considering contributing to the project we recommend branching out fr
 The development serer rebuilds itself and reloads when changes are made to it. If you want to manuall build it, run the following command
 * `npm run build`
 
-## deploy development server
+## Development client
+To deploy the development client use the following command.
+* `npm run dev-client`
 
-Now everything should be set up and you can deploy the server with.
+
+## Development server
+
+To deploy the development server input the following command.
 * `npm run dev-server`
 
 ## Running unit tests
@@ -41,7 +46,9 @@ Use the following command to run the unit tests.
 * `npm test`
 
 ## Running end-to-end tests
-
+End-to-end testing is implemented using Puppeteer and the tests can be found in [puppeteer.js](../e2e/puppeteer.js).
+Use the following command to run the end-to-end tests (note that must build and deploy before testing).
+* node `../e2e/puppeteer.js`
 
 ## Further help
 For further information please contact...
