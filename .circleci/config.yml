@@ -56,7 +56,7 @@ jobs:
       - store_artifacts:
           path: docs/pdf/ 
 
-      - deploy:
+        deploy:
           docker:
           - image: buildpack-deps:trusty
           steps:
