@@ -54,7 +54,7 @@ jobs:
           name: Creating PDF artifact
           command: 'npm run create-docs'
       - store_artifacts:
-          path: docs/pdf/ 
+          path: docs/pdf/
 
           
         deploy:
