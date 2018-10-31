@@ -9,7 +9,7 @@ const serverSideGame = new ticTacToe();
 //      2 - Y has won
 //      3 - tie
 
-router.get("/newGame", (req, res) => {
+router.get("/newGamed", (req, res) => {
     serverSideGame.resetBoard();
     res.status(200).send({ "TicTacToe": {
                             "GameBoard": serverSideGame.board,
